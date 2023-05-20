@@ -1,0 +1,77 @@
+.Loader {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: white;
+    z-index: 1000;
+}
+
+
+
+.Loader-path {
+    stroke-dasharray: 45;
+    stroke-dashoffset: 45;
+    animation: loadPath 2s ease-in both;
+}
+
+.Loader-svg-fill {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    animation: loadFill 2s ease-out both 2s;
+}
+
+
+
+
+.Loader svg,
+.Loader-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.Loader-text {
+    color: white;
+    font-weight: 500;
+    font-size: 5rem;
+    animation: live 2s ease-in-out 3s infinite;
+    text-decoration: none;
+}
+
+
+@keyframes loadFill {
+
+    100% {
+        clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+    }
+
+}
+
+
+
+@keyframes loadPath {
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes hide {
+    100% {
+        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    }
+}
+
+@keyframes live {
+    0% {
+        transform: translate3d(-50%, -50%, 0) scale(1);
+    }
+
+    50% {
+        transform: translate3d(-50%, -50%, 0) scale(1.5);
+    }
+
+    100% {
+        transform: translate3d(-50%, -50%, 0) scale(1);
+    }
+}

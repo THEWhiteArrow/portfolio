@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
+import { Route, Routes, useLocation } from 'react-router-dom'
+import './reset.css'
+import Loader from './Loader';
+import Hero from './Hero';
+import About from './About';
+import TransitionSpace from './TransitionSpace';
+import ProjectSection from './ProjectSection';
+import Contact from './Contact';
 
 function App() {
+  const loader = new URLSearchParams(useLocation().search).get('load') != 'fast'
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {
+        loader &&
+        <Loader />
+      }
+
+      <Hero />
+      <TransitionSpace height={500} rotate={180} />
+      <About />
+      <TransitionSpace height={500} />
+      <ProjectSection />
+      <TransitionSpace height={500} rotate={180} />
+      <Contact />
     </div>
   );
 }

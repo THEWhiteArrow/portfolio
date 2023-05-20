@@ -1,0 +1,120 @@
+.About {
+    background-color: #000000dd;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    color: white;
+}
+
+.About-intersecting {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 100%;
+}
+
+.About-info {
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.About-title {
+    font-size: 100px;
+    color: transparent;
+    -webkit-text-stroke-color: #ffffffdd;
+    -webkit-text-stroke-width: 2px;
+}
+
+
+.About-paragraph {
+    font-size: 20px;
+    margin: 5rem 0;
+    line-height: 1.5;
+}
+
+.About-info ul {
+    flex: 1;
+}
+
+.About-info ul li {
+    font-size: 20px;
+}
+
+.About-action {
+    position: relative;
+    align-self: center;
+    height: fit-content;
+    width: fit-content;
+    border-radius: 50%;
+    border: 2px solid #ffffffdd;
+    transition: transform .25s ease-in-out;
+}
+
+.About-action svg {
+    color: #ffffffdd;
+    height: 50px;
+    width: 50px;
+    animation: attract 2s linear infinite;
+}
+
+.About-info .About-action::after {
+    content: '';
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all .25s linear;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.About-title:hover~.About-action,
+.About-title:hover~.About-action::after {
+    transform: translate3d(0, 2rem, 0);
+}
+
+.About-paragraph:hover~.About-action,
+.About-paragraph:hover~.About-action::after {
+    transform: translate3d(0, -2rem, 0);
+}
+
+.About-info ul:hover~.About-action,
+.About-info ul:hover~.About-action::after {
+    transform: translate3d(-2rem, 0, 0);
+}
+
+.About-intersecting:hover~.About-info .About-action,
+.About-intersecting:hover~.About-info .About-action::after {
+    transform: translate3d(2rem, 0, 0);
+}
+
+
+
+
+
+
+@keyframes attract {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    25% {
+        transform: translate3d(0, 4px, 0);
+    }
+
+    50% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    75% {
+        transform: translate3d(0, -4px, 0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+
+}

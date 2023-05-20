@@ -1,0 +1,88 @@
+.Contact {
+    background-color: #000000dd;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 5rem;
+}
+
+.Contact-title {
+    font-size: 100px;
+    color: transparent;
+    -webkit-text-stroke-color: #ffffffdd;
+    -webkit-text-stroke-width: 2px;
+}
+
+.Contact-info {
+    display: flex;
+    font-size: 20px;
+}
+
+.Contact-button {
+    font-size: 20px;
+    border: 1px solid #ffffffdd;
+    border-radius: 15px;
+    color: #ffffffdd;
+    background-color: transparent;
+    width: min-content;
+    padding: .75rem 1.5rem;
+    align-self: flex-end;
+    margin: 1rem 0;
+    cursor: pointer;
+}
+
+.Contact-mail,
+.Contact-form {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+.Contact-mail {
+    flex: 1;
+}
+
+.Contact-social-section,
+.Contact-socials {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Contact-socials {
+    flex-direction: row;
+}
+
+.Contact-socials .SocialIcon {
+    margin: 1rem;
+    transition: all .25s ease-in-out;
+}
+
+.Contact-socials .SocialIcon:hover {
+    transform: translate3d(0, -.5rem, 0);
+}
+
+
+
+
+
+
+textarea,
+input {
+    width: 100%;
+    margin: 1rem 0;
+    font-size: inherit;
+    font-family: inherit;
+    resize: none;
+}
+
+input {
+    min-height: 3rem;
+}
+
+hr {
+    margin: 0 5rem;
+}
