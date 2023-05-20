@@ -10,6 +10,7 @@ export default function Cursor() {
         <div
             className="Cursor"
             style={{
+                pointerEvents: 'none',
                 zIndex: 1000,
                 position: 'fixed',
                 width: size + 'px',
