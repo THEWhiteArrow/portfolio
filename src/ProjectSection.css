@@ -8,6 +8,7 @@
     align-self: flex-end;
     font-size: 100px;
     color: transparent;
+    margin-right: 10rem;
     -webkit-text-stroke-color: #000000dd;
     -webkit-text-stroke-width: 2px;
 }

@@ -8,6 +8,7 @@ import About from './About';
 import TransitionSpace from './TransitionSpace';
 import ProjectSection from './ProjectSection';
 import Contact from './Contact';
+import Cursor from './Cursor';
 
 function App() {
   const loader = new URLSearchParams(useLocation().search).get('load') != 'fast'
@@ -17,6 +18,7 @@ function App() {
         loader &&
         <Loader />
       }
+      <Cursor />
 
       <Hero />
       <TransitionSpace height={500} rotate={180} />
