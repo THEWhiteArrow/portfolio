@@ -17,6 +17,7 @@ function App() {
   const [heroHeight, setHeroHeight] = useState(0);
   const [aboutHeight, setAboutHeight] = useState(0);
   const [projectHeight, setProjectHeight] = useState(0);
+  const [contactHeight, setContactHeight] = useState(0);
 
   const onScroll = (e: any) => {
     setScrollTop(Math.round(e.target.documentElement.scrollTop));
@@ -29,29 +30,30 @@ function App() {
 
   const heroPercentage = scrollTop / heroHeight * 100;
   const aboutPercentage = (scrollTop - heroHeight) / (aboutHeight) * 100;
-  console.log(scrollTop, heroHeight, aboutHeight, projectHeight)
+  // const projectPercentage = (scrollTop - projectHeight - aboutHeight) / (projectHeight - aboutHeight) * 100;
+  console.log(scrollTop)
 
   const heroStyle = {
-    zIndex: 100,
     position: 'fixed',
     left: `clamp(-100%, -${heroPercentage}%, 0%)`
   }
   const aboutStyle = {
-    zIndex: 100,
     position: 'fixed',
     left: `clamp(0%, ${70 - heroPercentage}%, 70%)`,
-    top: `clamp(-100%, ${100 - heroPercentage}% , 0%)`,
-    // top: `clamp(-100%, ${heroPercentage <= 100.0 ? '0%' : `${heroHeight - scrollTop}px`} , 0%)`
+    top: `clamp(${-aboutHeight}px, ${100 - heroPercentage}% , 0%)`,
   }
   const projectsStyle = {
-    zIndex: 100,
     position: 'fixed',
-    top: `clamp(-100%, ${100 - aboutPercentage}% , 100%)`,
-    // top: `clamp(-100%, ${heroPercentage <= 100.0 ? '0%' : `${heroHeight - scrollTop}px`} , 0%)`
+    // top: `clamp( calc(-100% - ${projectHeight}px), ${100 - aboutPercentage}% , 100%)`,
+    top: `clamp(  ${-projectHeight}px, calc(100% - ${scrollTop - aboutHeight}px ) , 100%)`, // lol
   }
+  // const contactStyle = {
+  //   position: 'fixed',
+  //   top: `clamp(${-contactHeight}px, ${100 - projectPercentage}% , 100%)`,
+  // }
 
   const fillerStyle2 = {
-    height: heroHeight + aboutHeight + projectHeight + 'px',
+    height: heroHeight + aboutHeight + projectHeight + contactHeight + 1500 + 'px',
   }
   return (
     <div className="App">
@@ -64,9 +66,9 @@ function App() {
 
       <ProjectSection scrollTop={scrollTop} style={projectsStyle} handleHeight={setProjectHeight} />
 
+      {/* <Contact scrollTop={scrollTop} style={contactStyle} handleHeight={setContactHeight} /> */}
       <div style={fillerStyle2} />
 
-      <Contact />
 
       {/* <TransitionSpace height={200} rotate={180} /> */}
       {/* <Hero scrollTop={scrollTop} style={{ zIndex: '100', position: 'fixed', top: '0', left: `clamp(-100%, calc(0% - ${scrollTop}px), 0%)` }} /> */}

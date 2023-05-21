@@ -27,9 +27,11 @@ export default class ProjectSection extends Component<Props, MyState> {
         const { scrollTop, style } = this.props
         return (
             <div className="ProjectSection" style={style}>
-                <h2 className="ProjectSection-title">Projects</h2>
-                <div className='ProjectSection-projects'>
-                    {projectsData.map(project => <Project key={project.title} {...project} />)}
+                <div className='ProjectSection-container'>
+                    <h2 className="ProjectSection-title">Projects</h2>
+                    <div className='ProjectSection-projects'>
+                        {projectsData.map(project => <Project key={project.title} {...project} />)}
+                    </div>
                 </div>
             </div>
         )
