@@ -1,0 +1,161 @@
+.Skills {
+    background-color: #000000dd;
+    height: 100%;
+    width: 100%;
+}
+
+.title {
+    font-size: 100px;
+    color: transparent;
+    -webkit-text-stroke-color: #ffffffdd;
+    -webkit-text-stroke-width: 2px;
+}
+
+.Skills-container {
+    height: 100%;
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.Skills-items {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    /* background-color: aquamarine; */
+}
+
+
+
+.SkillItem {
+    width: auto;
+    height: 15vh;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: aqua; */
+    animation: wiggle 10s ease-in-out infinite;
+}
+
+.SkillItem:hover {
+    animation-play-state: paused;
+}
+
+.SkillItem-info {
+    /* position: absolute; */
+    color: #ffffffdd;
+    font-size: 20px;
+}
+
+.SkillItem img {
+    /* position: relative; */
+    height: 100%;
+    filter: grayscale(100%);
+    transition: filter .25s ease-in-out;
+    cursor: pointer;
+}
+
+.SkillItem:hover img {
+    height: 100%;
+    filter: grayscale(0%);
+}
+
+@keyframes wiggle {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-10deg);
+    }
+
+    50% {
+        transform: rotate(20deg);
+    }
+
+    75% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+
+/* generated delays */
+.SkillItem:nth-of-type(1) {
+    animation-delay: 1292ms;
+}
+
+.SkillItem:nth-of-type(2) {
+    animation-delay: 263ms;
+}
+
+.SkillItem:nth-of-type(3) {
+    animation-delay: 483ms;
+}
+
+.SkillItem:nth-of-type(4) {
+    animation-delay: 376ms;
+}
+
+.SkillItem:nth-of-type(5) {
+    animation-delay: 1297ms;
+}
+
+.SkillItem:nth-of-type(6) {
+    animation-delay: 966ms;
+}
+
+.SkillItem:nth-of-type(7) {
+    animation-delay: 1366ms;
+}
+
+.SkillItem:nth-of-type(8) {
+    animation-delay: 1162ms;
+}
+
+.SkillItem:nth-of-type(9) {
+    animation-delay: 357ms;
+}
+
+.SkillItem:nth-of-type(10) {
+    animation-delay: 622ms;
+}
+
+.SkillItem:nth-of-type(11) {
+    animation-delay: 1435ms;
+}
+
+.SkillItem:nth-of-type(12) {
+    animation-delay: 10ms;
+}
+
+.SkillItem:nth-of-type(13) {
+    animation-delay: 244ms;
+}
+
+.SkillItem:nth-of-type(14) {
+    animation-delay: 1106ms;
+}
+
+.SkillItem:nth-of-type(15) {
+    animation-delay: 6ms;
+}
+
+.SkillItem:nth-of-type(16) {
+    animation-delay: 1411ms;
+}
+
+.SkillItem:nth-of-type(17) {
+    animation-delay: 778ms;
+}
+
+.SkillItem:nth-of-type(18) {
+    animation-delay: 619ms;
+}

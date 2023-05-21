@@ -1,0 +1,67 @@
+.Vision {
+    background-color: #ffffffdd;
+    height: 100%;
+    width: 100%;
+}
+
+.Vision .title {
+    font-size: 100px;
+    color: transparent;
+    -webkit-text-stroke-color: #000000dd;
+    -webkit-text-stroke-width: 2px;
+    align-self: center;
+
+}
+
+.Vision-container {
+    height: 100%;
+    width: 100%;
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Vision-paragraph {
+    position: relative;
+    margin: 2rem 0;
+    font-size: 20px;
+    line-height: 1.5;
+    z-index: 100;
+}
+
+
+.Vision-paragraph:hover::after {
+    opacity: 1;
+}
+
+.Vision-paragraph::after {
+    position: absolute;
+    content: "👻";
+    font-size: 50px;
+    top: 0;
+    left: 0;
+    z-index: -100;
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+    transition: opacity .25s ease-in-out;
+    animation: moveGhost 20s ease-in-out infinite;
+}
+
+.so-big-that-almost-scares-me {
+    font-size: 35px;
+}
+
+@keyframes moveGhost {
+    0% {
+        left: 0%;
+    }
+
+    50% {
+        left: calc(100% - 100px);
+    }
+
+    100% {
+        left: 0%;
+    }
+}

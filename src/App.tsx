@@ -10,14 +10,19 @@ import ProjectSection from './ProjectSection';
 import Contact from './Contact';
 import Cursor from './Cursor';
 import { useEffect, useRef, useState } from 'react';
+import Skills from './Skills';
+import Vision from './Vision';
 
 function App() {
   const [scrollTop, setScrollTop] = useState(0);
+  const [windowHeight, setWindowHeight] = useState(0);
+
   const [heroHeight, setHeroHeight] = useState(0);
   const [aboutHeight, setAboutHeight] = useState(0);
   const [projectHeight, setProjectHeight] = useState(0);
   const [contactHeight, setContactHeight] = useState(0);
-  const [windowHeight, setWindowHeight] = useState(0);
+  const [skillsHeight, setSkillsHeight] = useState(0);
+  const [visionHeight, setVisionHeight] = useState(0);
 
   const onScroll = (e: any) => {
     setScrollTop(Math.round(e.target.documentElement.scrollTop));
@@ -25,6 +30,8 @@ function App() {
     setAboutHeight(document.querySelector('.About')?.clientHeight || 0)
     setProjectHeight(document.querySelector('.ProjectSection')?.clientHeight || 0)
     setContactHeight(document.querySelector('.Contact')?.clientHeight || 0)
+    setSkillsHeight(document.querySelector('.Skills')?.clientHeight || 0)
+    setVisionHeight(document.querySelector('.Vision')?.clientHeight || 0)
     setWindowHeight(window.innerHeight)
   }
 
@@ -52,6 +59,8 @@ function App() {
 
 
   const heroPercentage = scrollTop / heroHeight * 100;
+  const skillsPercentage = (windowHeight + aboutHeight + projectHeight - scrollTop) / skillsHeight * 100;
+  console.log(Math.floor(skillsPercentage))
 
   const heroStyle = {
     position: 'fixed',
@@ -67,19 +76,31 @@ function App() {
     top: `${min(windowHeight, windowHeight + aboutHeight - scrollTop)}px`,
   }
 
+  const skillsStyle = {
+    position: 'fixed',
+    top: `${max(0, min(windowHeight, windowHeight + aboutHeight + projectHeight - scrollTop))}px`,
+    left: `clamp(-100%, ${skillsPercentage}% ,0%)`,
+  }
+
+
+
+  const visionStyle = {
+    position: 'fixed',
+    top: `${min(0, windowHeight + aboutHeight + projectHeight + skillsHeight - scrollTop)}px`,
+    left: `clamp(0%, ${100 + skillsPercentage}% ,100%)`,
+  }
   const contactStyle = {
     position: 'fixed',
-    top: `${min(windowHeight, windowHeight + aboutHeight + projectHeight - scrollTop)}px`,
-
+    top: `${min(windowHeight, windowHeight + aboutHeight + projectHeight + skillsHeight + visionHeight - scrollTop)}px`,
   }
-  console.log(heroHeight, aboutHeight, projectHeight, contactHeight, scrollTop)
+
   const fillerStyle2 = {
-    height: heroHeight + aboutHeight + projectHeight + contactHeight + 'px',
+    height: heroHeight + aboutHeight + projectHeight + skillsHeight + visionHeight + contactHeight + 'px',
   }
   return (
     <div className="App">
       {/* {loader && <Loader />} */}
-      <Loader />
+      {/* <Loader /> */}
       <Cursor />
 
       <Hero scrollTop={scrollTop} style={heroStyle} handleHeight={setHeroHeight} />
@@ -87,6 +108,11 @@ function App() {
       <About scrollTop={scrollTop} style={aboutStyle} handleHeight={setAboutHeight} />
 
       <ProjectSection scrollTop={scrollTop} style={projectsStyle} handleHeight={setProjectHeight} />
+
+      <Skills style={skillsStyle} />
+
+      <Vision style={visionStyle} />
+
 
       <Contact scrollTop={scrollTop} style={contactStyle} handleHeight={setContactHeight} />
       <div style={fillerStyle2} />
