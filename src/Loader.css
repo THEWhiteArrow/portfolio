@@ -4,6 +4,7 @@
     position: fixed;
     background-color: white;
     z-index: 1000;
+    clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
 }
 
 
@@ -11,12 +12,12 @@
 .Loader-path {
     stroke-dasharray: 45;
     stroke-dashoffset: 45;
-    animation: loadPath 2s ease-in both;
+    animation: loadPath 1.5s ease-out both;
 }
 
 .Loader-svg-fill {
     clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-    animation: loadFill 2s ease-out both 2s;
+    animation: loadFill 1.5s ease-out both 1.5s;
 }
 
 
@@ -34,10 +35,14 @@
     color: white;
     font-weight: 500;
     font-size: 5rem;
-    animation: live 2s ease-in-out 3s infinite;
+    animation: live 2s ease-in-out 2.5s infinite;
     text-decoration: none;
+    cursor: pointer;
 }
 
+.hide {
+    animation: hide 1s ease-out both;
+}
 
 @keyframes loadFill {
 
@@ -57,8 +62,13 @@
 }
 
 @keyframes hide {
+    99% {
+        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    }
+
     100% {
         clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+        display: none;
     }
 }
 

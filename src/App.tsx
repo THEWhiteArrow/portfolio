@@ -12,7 +12,6 @@ import Cursor from './Cursor';
 import { useEffect, useRef, useState } from 'react';
 
 function App() {
-  const loader = new URLSearchParams(useLocation().search).get('load') != 'fast'
   const [scrollTop, setScrollTop] = useState(0);
   const [heroHeight, setHeroHeight] = useState(0);
   const [aboutHeight, setAboutHeight] = useState(0);
@@ -29,6 +28,7 @@ function App() {
     setWindowHeight(window.innerHeight)
   }
 
+  // const loader = new URLSearchParams(useLocation().search).get('load') != 'fast'
   // const onResize = (e: any) => {
   //   setHeroHeight(document.querySelector('.Hero')?.clientHeight || 0)
   //   setAboutHeight(document.querySelector('.About')?.clientHeight || 0)
@@ -45,7 +45,10 @@ function App() {
   useEffect(() => {
     window.addEventListener('scroll', onScroll);
     // window.addEventListener('resize', onResize); 
+    window.addEventListener('load', onScroll);
   }, []);
+
+
 
 
   const heroPercentage = scrollTop / heroHeight * 100;
@@ -75,7 +78,8 @@ function App() {
   }
   return (
     <div className="App">
-      {loader && <Loader />}
+      {/* {loader && <Loader />} */}
+      <Loader />
       <Cursor />
 
       <Hero scrollTop={scrollTop} style={heroStyle} handleHeight={setHeroHeight} />

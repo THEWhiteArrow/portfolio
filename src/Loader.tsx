@@ -1,6 +1,10 @@
 import LinkCustom from './LinkCustom'
 import './Loader.css'
 export default function Loader() {
+    const handleClick = () => {
+        document.querySelector('.Loader')?.classList.add('hide')
+
+    }
     return (
         <div className='Loader'>
 
@@ -19,7 +23,7 @@ export default function Loader() {
                     stroke="#000000" strokeWidth="0.05" fill="#000000dd" strokeLinecap="round"
                 />
             </svg>
-            <LinkCustom className='Loader-text' to=''>Start</LinkCustom>
+            <span className='Loader-text' onClick={handleClick}>Start</span>
         </div>
     )
 
