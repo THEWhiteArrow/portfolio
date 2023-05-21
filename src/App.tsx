@@ -18,20 +18,37 @@ function App() {
   const [aboutHeight, setAboutHeight] = useState(0);
   const [projectHeight, setProjectHeight] = useState(0);
   const [contactHeight, setContactHeight] = useState(0);
+  const [windowHeight, setWindowHeight] = useState(0);
 
   const onScroll = (e: any) => {
     setScrollTop(Math.round(e.target.documentElement.scrollTop));
+    setHeroHeight(document.querySelector('.Hero')?.clientHeight || 0)
+    setAboutHeight(document.querySelector('.About')?.clientHeight || 0)
+    setProjectHeight(document.querySelector('.ProjectSection')?.clientHeight || 0)
+    setContactHeight(document.querySelector('.Contact')?.clientHeight || 0)
+    setWindowHeight(window.innerHeight)
   }
+
+  // const onResize = (e: any) => {
+  //   setHeroHeight(document.querySelector('.Hero')?.clientHeight || 0)
+  //   setAboutHeight(document.querySelector('.About')?.clientHeight || 0)
+  //   setProjectHeight(document.querySelector('.ProjectSection')?.clientHeight || 0)
+  //   setContactHeight(document.querySelector('.Contact')?.clientHeight || 0)
+  //   setWindowHeight(window.innerHeight)
+
+  // }
+
+  const min = Math.min
+  const max = Math.max
+  const abs = Math.abs
 
   useEffect(() => {
     window.addEventListener('scroll', onScroll);
+    // window.addEventListener('resize', onResize); 
   }, []);
 
 
   const heroPercentage = scrollTop / heroHeight * 100;
-  const aboutPercentage = (scrollTop - heroHeight) / (aboutHeight) * 100;
-  // const projectPercentage = (scrollTop - projectHeight - aboutHeight) / (projectHeight - aboutHeight) * 100;
-  console.log(heroHeight)
 
   const heroStyle = {
     position: 'fixed',
@@ -40,20 +57,21 @@ function App() {
   const aboutStyle = {
     position: 'fixed',
     left: `clamp(0%, ${70 - heroPercentage}%, 70%)`,
-    top: `clamp(${-aboutHeight}px, ${100 - heroPercentage}% , 0%)`,
+    top: `${min(0, windowHeight - scrollTop)}px`,
   }
   const projectsStyle = {
     position: 'fixed',
-    // top: `clamp( calc(-100% - ${projectHeight}px), ${100 - aboutPercentage}% , 100%)`,
-    top: `clamp(  calc(-100% - ${projectHeight}px), calc(100% - ${scrollTop - aboutHeight}px ) , 100%)`, // lol
+    top: `${min(windowHeight, windowHeight + aboutHeight - scrollTop)}px`,
   }
-  // const contactStyle = {
-  //   position: 'fixed',
-  //   top: `clamp(${-contactHeight}px, ${100 - projectPercentage}% , 100%)`,
-  // }
 
+  const contactStyle = {
+    position: 'fixed',
+    top: `${min(windowHeight, windowHeight + aboutHeight + projectHeight - scrollTop)}px`,
+
+  }
+  console.log(heroHeight, aboutHeight, projectHeight, contactHeight, scrollTop)
   const fillerStyle2 = {
-    height: heroHeight + aboutHeight + projectHeight + contactHeight + 1500 + 'px',
+    height: heroHeight + aboutHeight + projectHeight + contactHeight + 'px',
   }
   return (
     <div className="App">
@@ -66,7 +84,7 @@ function App() {
 
       <ProjectSection scrollTop={scrollTop} style={projectsStyle} handleHeight={setProjectHeight} />
 
-      {/* <Contact scrollTop={scrollTop} style={contactStyle} handleHeight={setContactHeight} /> */}
+      <Contact scrollTop={scrollTop} style={contactStyle} handleHeight={setContactHeight} />
       <div style={fillerStyle2} />
 
 

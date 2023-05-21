@@ -31,6 +31,12 @@
     align-self: flex-end;
     margin: 1rem 0;
     cursor: pointer;
+    transition: all .25s ease-in-out;
+}
+
+.Contact-button:hover {
+    color: #000000dd;
+    background-color: #ffffffdd;
 }
 
 .Contact-mail,

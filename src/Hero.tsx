@@ -27,7 +27,15 @@ export default class Hero extends Component<Props, MyState> {
             <div className="Hero" style={style}>
 
 
-                <h1 className="Hero-title">Hello, <br />my name is Damian</h1>
+                <h1 className="Hero-title">
+                    <span className='animate'>Hello</span>
+                    <span className="animate">, </span>
+                    <br />
+                    <span className="animate">my </span>
+                    <span className="animate">name </span>
+                    <span className="animate">is </span>
+                    <span className='animate'>Damian</span>
+                </h1>
                 <p className="Hero-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure eaque repellendus esse blanditiis placeat atque, magnam qui hic, cupiditate sapiente natus totam laudantium ducimus facilis debitis voluptates dolorum consectetur dolorem exercitationem laborum excepturi odio vero.Lorem ipsum dolor sit amLorem ipsum dolor sit amet consectetur adipisicing elit. Iure eaque repellendus esse blanditiis placeat atque, magnam qui hic, cupiditate sapiente natus totam laudantium ducimus facilis debitis voluptates dolorum consectetur dolorem exercitationem laborum excepturi odio vero.et consectetur adipisicing elit. Iure eaque repellendus esse blanditiis placeat atque, magnam qui hic, cupiditate sapiente natus totam laudantium ducimus facilis debitis voluptates dolorum consectetur dolorem exercitationem laborum excepturi odio vero. </p>
                 <div className="Hero-navigation">
                     <LinkCustom className='Hero-link' to='#'>About</ LinkCustom>
