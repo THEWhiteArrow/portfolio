@@ -20,7 +20,7 @@ body {
 * {
   box-sizing: border-box !important;
 
-  transition: none !important;
+  /* transition: none !important; */
   /* outline: 3px solid pink; */
 }
 

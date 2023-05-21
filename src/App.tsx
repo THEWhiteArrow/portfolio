@@ -31,7 +31,7 @@ function App() {
   const heroPercentage = scrollTop / heroHeight * 100;
   const aboutPercentage = (scrollTop - heroHeight) / (aboutHeight) * 100;
   // const projectPercentage = (scrollTop - projectHeight - aboutHeight) / (projectHeight - aboutHeight) * 100;
-  console.log(scrollTop)
+  console.log(heroHeight)
 
   const heroStyle = {
     position: 'fixed',
@@ -45,7 +45,7 @@ function App() {
   const projectsStyle = {
     position: 'fixed',
     // top: `clamp( calc(-100% - ${projectHeight}px), ${100 - aboutPercentage}% , 100%)`,
-    top: `clamp(  ${-projectHeight}px, calc(100% - ${scrollTop - aboutHeight}px ) , 100%)`, // lol
+    top: `clamp(  calc(-100% - ${projectHeight}px), calc(100% - ${scrollTop - aboutHeight}px ) , 100%)`, // lol
   }
   // const contactStyle = {
   //   position: 'fixed',

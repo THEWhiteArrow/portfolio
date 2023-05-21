@@ -27,6 +27,7 @@ export default class About extends Component<Props, MyState> {
 
         return (
             <div className="About" style={style}>
+
                 <div className='About-intersecting'>
                     <HeroFace />
                 </div>
