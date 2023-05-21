@@ -4,6 +4,7 @@
     width: 100%;
     display: flex;
     color: white;
+    overflow-x: hidden;
 }
 
 
@@ -13,6 +14,35 @@
     align-items: center;
     width: 30%;
     height: 100%;
+}
+
+.HeroFace {
+    position: relative;
+    transition: all .25s ease-in-out;
+}
+
+
+.HeroFace::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./facepic.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0;
+    transition: all .25s ease-in-out;
+}
+
+.HeroFace:hover::after {
+    opacity: 1;
+}
+
+.HeroFace:hover {
+    color: transparent;
 }
 
 .About-info {
@@ -48,7 +78,7 @@
     align-self: center;
     height: fit-content;
     width: fit-content;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     border: 2px solid #ffffffdd;
     transition: transform .25s ease-in-out;
 }
@@ -69,7 +99,7 @@
     left: 0;
     transition: all .25s linear;
     border: 1px solid white;
-    border-radius: 50%;
+    /* border-radius: 50%; */
 }
 
 .About-title:hover~.About-action,

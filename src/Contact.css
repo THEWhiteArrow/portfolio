@@ -23,7 +23,7 @@
 .Contact-button {
     font-size: 20px;
     border: 1px solid #ffffffdd;
-    border-radius: 15px;
+    /* border-radius: 15px; */
     color: #ffffffdd;
     background-color: transparent;
     width: min-content;
