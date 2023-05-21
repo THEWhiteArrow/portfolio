@@ -100,7 +100,7 @@ function App() {
   return (
     <div className="App">
       {/* {loader && <Loader />} */}
-      {/* <Loader /> */}
+      <Loader />
       <Cursor />
 
       <Hero scrollTop={scrollTop} style={heroStyle} handleHeight={setHeroHeight} />
