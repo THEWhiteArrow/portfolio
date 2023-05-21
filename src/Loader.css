@@ -12,7 +12,7 @@
 .Loader-path {
     stroke-dasharray: 45;
     stroke-dashoffset: 45;
-    animation: loadPath 1.5s ease-out both;
+    animation: loadPath 1.5s ease-in both;
 }
 
 .Loader-svg-fill {
