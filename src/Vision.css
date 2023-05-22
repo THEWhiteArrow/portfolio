@@ -5,10 +5,6 @@
 }
 
 .Vision .title {
-    font-size: 100px;
-    color: transparent;
-    -webkit-text-stroke-color: #000000dd;
-    -webkit-text-stroke-width: 2px;
     align-self: center;
 
 }

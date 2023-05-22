@@ -8,12 +8,7 @@
     padding: 5rem;
 }
 
-.Contact-title {
-    font-size: 100px;
-    color: transparent;
-    -webkit-text-stroke-color: #ffffffdd;
-    -webkit-text-stroke-width: 2px;
-}
+
 
 .Contact-info {
     display: flex;

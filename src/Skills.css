@@ -4,12 +4,7 @@
     width: 100%;
 }
 
-.title {
-    font-size: 100px;
-    color: transparent;
-    -webkit-text-stroke-color: #ffffffdd;
-    -webkit-text-stroke-width: 2px;
-}
+
 
 .Skills-container {
     height: 100%;
@@ -56,11 +51,12 @@
     height: 100%;
     filter: grayscale(100%);
     transition: filter .25s ease-in-out;
+    transition-delay: 2s;
     cursor: pointer;
 }
 
 .SkillItem:hover img {
-    height: 100%;
+    transition-delay: 0s !important;
     filter: grayscale(0%);
 }
 

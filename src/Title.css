@@ -1,0 +1,33 @@
+.Title {
+    font-size: 100px;
+
+}
+
+.Title-white {
+    font-size: 100px;
+    color: transparent;
+    -webkit-text-stroke-color: #ffffffdd;
+    -webkit-text-stroke-width: 2px;
+}
+
+.Title-black {
+    font-size: 100px;
+    color: transparent;
+    -webkit-text-stroke-color: #000000dd;
+    -webkit-text-stroke-width: 2px;
+}
+
+.Title-letter {
+    transition: color .25s ease-in-out;
+    transition-delay: 1s;
+}
+
+.Title-letter-black:hover {
+    transition-delay: 0s;
+    color: #000000dd;
+}
+
+.Title-letter-white:hover {
+    transition-delay: 0s;
+    color: #ffffffdd;
+}

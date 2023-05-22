@@ -1,6 +1,7 @@
 import './Contact.css'
 import SocialIcon from './SocialIcon'
 import { Component } from 'react'
+import Title from './Title'
 
 type Props = {
     style?: object,
@@ -26,7 +27,7 @@ export default class Contact extends Component<Props, MyState> {
 
         return (
             <div className="Contact" style={style}>
-                <h2 className="Contact-title">Contact</h2>
+                <Title content='Contact' colorType='white' />
                 <div className='Contact-info'>
                     <div className='Contact-social-section'>
                         <div>Hit me up on social medias</div>

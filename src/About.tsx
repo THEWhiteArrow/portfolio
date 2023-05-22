@@ -2,6 +2,7 @@ import { Component } from 'react'
 import './About.css'
 import LinkCustom from './LinkCustom';
 import HeroFace from './HeroFace';
+import Title from './Title';
 
 type Props = {
     style?: object,
@@ -32,7 +33,8 @@ export default class About extends Component<Props, MyState> {
                     <HeroFace />
                 </div>
                 <div className='About-info'>
-                    <h2 className='About-title'>About</h2>
+                    {/* <h2 className='About-title'>About</h2> */}
+                    <Title content='About' colorType='white' className="About-title" />
                     <p className='About-paragraph'>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius autem possimus error temporibus illum dolorum vitae iste iusto voluptates fugit blanditiis sed ipsam eveniet maxime iure, fuga nihil sit cumque unde necessitatibus laudantium delectus accusantium sapiente corrupti! Nesciunt hic dolores, assumenda laudantium ratione mollitia velit dicta consectetur incidunt praesentium similique dolor earum nulla, voluptas possimus amet excepturi. Incidunt mollitia magnam consectetur aut, aliquid suscipit deserunt accusantium nemo voluptatem rerum delectus eos? Tenetur assumenda veniam explicabo, beatae consequuntur ex! Ratione quaerat, repellat totam optio suscipit quas explicabo eos velit? Id odio quae incidunt accusantium libero quod consequatur ad eum corporis. Adipisci.
                     </p>

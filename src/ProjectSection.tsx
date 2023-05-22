@@ -2,6 +2,7 @@ import { Component } from 'react'
 import Project from './Project'
 import './ProjectSection.css'
 import projectsData from './projectData'
+import Title from './Title'
 
 
 type Props = {
@@ -28,7 +29,7 @@ export default class ProjectSection extends Component<Props, MyState> {
         return (
             <div className="ProjectSection" style={style}>
                 <div className='ProjectSection-container'>
-                    <h2 className="ProjectSection-title">Projects</h2>
+                    <Title content='Project' colorType='black' className="ProjectSection-title" />
                     <div className='ProjectSection-projects'>
                         {projectsData.map(project => <Project key={project.title} {...project} />)}
                     </div>

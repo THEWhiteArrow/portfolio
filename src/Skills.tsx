@@ -1,12 +1,14 @@
 import SkillItem from './SkillItem'
 import './Skills.css'
+import Title from './Title'
 
 type Props = {
     style?: {}
 }
 export default function Skills(props: Props) {
     type Options = 'Beginner' | 'Advanced' | 'Expert'
-    const skills: { name: string, proficiency: Options }[] = [
+    type SkillType = { name: string, proficiency: Options }
+    const skills: SkillType[] = [
         { name: 'js', proficiency: 'Expert' },
         { name: 'html', proficiency: 'Expert' },
         { name: 'css', proficiency: 'Expert' },
@@ -27,16 +29,24 @@ export default function Skills(props: Props) {
         { name: 'vscode', proficiency: 'Expert' },
 
     ]
+    const compareFn = (a: SkillType, b: SkillType) => {
+        if (a.proficiency == b.proficiency) {
+            if (a.name < b.name) return -1;
+            else return 1;
+        }
+        else {
+            if (a.proficiency < b.proficiency) return -1;
+            else return 1;
+        }
+    }
     return (
         <div className='Skills' style={props.style}>
             <div className='Skills-container'>
 
-                <h2 className='title'>
-                    Skills
-                </h2>
+                <Title content='Skills' colorType='white' />
 
                 <div className='Skills-items'>
-                    {skills.map(skill => <SkillItem key={skill.name} {...skill} />)}
+                    {skills.sort(compareFn).map(skill => <SkillItem key={skill.name} {...skill} />)}
                 </div>
             </div>
 
