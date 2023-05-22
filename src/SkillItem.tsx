@@ -6,7 +6,10 @@ export default function SkillItem(props: Props) {
     const url = `https://skillicons.dev/icons?i=${props.name}`
     return (
         <div className="SkillItem">
-            <img src={url} alt={'skill ' + props.name} />
+            <div className="SkillItem-img-container">
+
+                <img src={url} alt={'skill ' + props.name} />
+            </div>
             <div className="SkillItem-info">
                 {props.name}
                 <br />

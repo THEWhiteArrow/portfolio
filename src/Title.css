@@ -18,16 +18,17 @@
 }
 
 .Title-letter {
-    transition: color .25s ease-in-out;
-    transition-delay: 1s;
+    transition: color 2s ease-in-out;
+}
+
+.Title-letter:hover {
+    transition-duration: .15s;
 }
 
 .Title-letter-black:hover {
-    transition-delay: 0s;
     color: #000000dd;
 }
 
 .Title-letter-white:hover {
-    transition-delay: 0s;
     color: #ffffffdd;
 }

@@ -18,7 +18,7 @@
 
 .HeroFace {
     position: relative;
-    transition: all .25s ease-in-out;
+    transition: all 1.5s ease-in-out;
 }
 
 
@@ -34,14 +34,16 @@
     background-position: center;
     background-size: cover;
     opacity: 0;
-    transition: all .25s ease-in-out;
+    transition: all 1.5s ease-in-out;
 }
 
 .HeroFace:hover::after {
     opacity: 1;
+    transition-duration: .5s;
 }
 
 .HeroFace:hover {
+    transition-duration: .5s;
     color: transparent;
 }
 
