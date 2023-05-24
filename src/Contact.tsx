@@ -6,7 +6,7 @@ import Title from './Title'
 type Props = {
     style?: object,
     scrollTop?: number,
-    handleHeight: Function
+    handleHeight?: Function
 }
 
 type MyState = { scrollTop?: number, height?: number };
@@ -18,7 +18,8 @@ export default class Contact extends Component<Props, MyState> {
     componentDidMount(): void {
         const height = document.querySelector('.Contact')?.clientHeight
         this.setState({ height })
-        this.props.handleHeight(height)
+        if (this.props.handleHeight)
+            this.props.handleHeight(height)
     }
 
     render() {

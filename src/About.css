@@ -1,6 +1,7 @@
 .About {
     background-color: #000000dd;
-    height: 100%;
+    min-height: 100%;
+    height: max-content;
     width: 100%;
     display: flex;
     color: white;

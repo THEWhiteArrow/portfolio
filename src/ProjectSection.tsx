@@ -8,7 +8,7 @@ import Title from './Title'
 type Props = {
     style?: object,
     scrollTop?: number,
-    handleHeight: Function
+    handleHeight?: Function
 }
 
 type MyState = { scrollTop?: number, height?: number };
@@ -22,7 +22,8 @@ export default class ProjectSection extends Component<Props, MyState> {
     componentDidMount(): void {
         const height = document.querySelector('.ProjectSection')?.clientHeight
         this.setState({ height })
-        this.props.handleHeight(height)
+        if (this.props.handleHeight)
+            this.props.handleHeight(height)
     }
     render() {
         const { scrollTop, style } = this.props
