@@ -1,4 +1,4 @@
-import './Nav.css'
+import '../styles/Nav.css'
 import { Link, useNavigate } from 'react-router-dom'
 
 export default function Nav() {

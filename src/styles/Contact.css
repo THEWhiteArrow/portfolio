@@ -1,5 +1,5 @@
 .Contact {
-    background-color: #000000dd;
+    background-color: #000000d5;
     height: 100%;
     width: 100%;
     display: flex;
@@ -30,7 +30,7 @@
 }
 
 .Contact-button:hover {
-    color: #000000dd;
+    color: #000000d5;
     background-color: #ffffffdd;
 }
 

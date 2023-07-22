@@ -13,7 +13,7 @@
 .Title-black {
     font-size: 100px;
     color: transparent;
-    -webkit-text-stroke-color: #000000dd;
+    -webkit-text-stroke-color: #000000d5;
     -webkit-text-stroke-width: 2px;
 }
 
@@ -26,7 +26,7 @@
 }
 
 .Title-letter-black:hover {
-    color: #000000dd;
+    color: #000000d5;
 }
 
 .Title-letter-white:hover {

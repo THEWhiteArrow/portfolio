@@ -1,5 +1,5 @@
 import LinkCustom from './LinkCustom'
-import './Loader.css'
+import '../styles/Loader.css'
 export default function Loader() {
     const handleClick = () => {
         document.querySelector('.Loader')?.classList.add('hide')
@@ -20,7 +20,7 @@ export default function Loader() {
                 <path
                     className='Loader-path-fill'
                     d="M 0 0 L 0 -4 Q 0 -5 1 -5 L 15 -5 Q 16 -5 16 -4 L 16 0 Q 16 1 15 1 L 1 1 Q 0 1 0 0"
-                    stroke="#000000" strokeWidth="0.05" fill="#000000dd" strokeLinecap="round"
+                    stroke="#000000" strokeWidth="0.05" fill="#000000d5" strokeLinecap="round"
                 />
             </svg>
             <span className='Loader-text' onClick={handleClick}>Start</span>

@@ -21,7 +21,7 @@
 .Vision-paragraph {
     position: relative;
     margin: 2rem 0;
-    font-size: 20px;
+    font-size: 1.5rem;
     line-height: 1.5;
     z-index: 100;
 }
@@ -44,8 +44,12 @@
     animation: moveGhost 20s ease-in-out infinite;
 }
 
-.so-big-that-almost-scares-me {
-    font-size: 35px;
+.highlight {
+    /* font-size: 1.5rem; */
+    background-color: #000000d5;
+    padding: 0 5px;
+    border-radius: 5px;
+    color: #ffffffdd;
 }
 
 @keyframes moveGhost {

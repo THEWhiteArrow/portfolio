@@ -1,4 +1,4 @@
-import './Contact.css'
+import '../styles/Contact.css'
 import SocialIcon from './SocialIcon'
 import { Component } from 'react'
 import Title from './Title'
@@ -92,8 +92,8 @@ export default class Contact extends Component<Props, MyState> {
                     <div className='Contact-mail'>
                         <div>Or mail me at <u>damian.trafialek@gmail.com</u></div>
                         <form className='Contact-form'>
-                            <input type='email' placeholder='email' />
-                            <textarea rows={15}  ></textarea>
+                            <input type='email' placeholder='Your precious email' />
+                            <textarea rows={15} placeholder='Your thoughts'></textarea>
                             <button className='Contact-button' type='submit'>Punch</button>
                         </form>
                     </div>

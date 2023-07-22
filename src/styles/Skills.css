@@ -1,5 +1,5 @@
 .Skills {
-    background-color: #000000dd;
+    background-color: #000000d5;
     height: 100%;
     width: 100%;
 }
@@ -69,7 +69,7 @@
 
     color: #ffffffdd;
     position: absolute;
-    background-color: #000000dd;
+    background-color: #000000d5;
     opacity: 0;
     /* transform: rotate(180deg); */
     transition: opacity .25s ease-in-out, left .25s ease-in-out;
@@ -83,9 +83,9 @@
 .SkillItem img {
     /* position: relative; */
     height: 100%;
-    filter: grayscale(100%);
+    filter: grayscale(0.5);
     transition: filter .25s ease-in-out;
-    transition-delay: 2s;
+    transition-delay: 1s;
     cursor: pointer;
 }
 

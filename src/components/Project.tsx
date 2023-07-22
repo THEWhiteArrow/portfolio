@@ -9,11 +9,12 @@ type Props = {
 }
 export default function Project(props: Props) {
     const { title, description, imgUrl, imgAlt } = props
+    const image = require(`../assets/${imgUrl}`)
     return (
         <div className="Project">
             <div className="Project-img-container">
                 <LinkCustom to={`/project/${title}`}>
-                    <img src={imgUrl} alt={imgAlt} />
+                    <img src={image} alt={imgAlt} />
                 </LinkCustom>
             </div>
             <div className="Project-info-container">
