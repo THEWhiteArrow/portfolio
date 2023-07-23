@@ -1,33 +1,20 @@
-import '../styles/Contact.css'
-import SocialIcon from './SocialIcon'
 import { Component } from 'react'
+import SocialIcon from './SocialIcon'
 import Title from './Title'
 
-type Props = {
-    style?: object,
-    scrollTop?: number,
-    handleHeight?: Function
-}
 
-type MyState = { scrollTop?: number, height?: number };
-export default class Contact extends Component<Props, MyState> {
-    constructor(props: Props) {
+
+export default class Contact extends Component {
+    constructor(props: any) {
         super(props)
     }
 
-    componentDidMount(): void {
-        const height = document.querySelector('.Contact')?.clientHeight
-        this.setState({ height })
-        if (this.props.handleHeight)
-            this.props.handleHeight(height)
-    }
 
     render() {
-        const { scrollTop, style } = this.props
 
 
         return (
-            <div className="Contact" style={style}>
+            <div className="Contact">
                 <Title content='Contact' colorType='white' />
                 <div className='Contact-info'>
                     <div className='Contact-social-section'>

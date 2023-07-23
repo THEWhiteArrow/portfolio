@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-import Cursor from './Cursor'
 import About from './About'
 import Contact from './Contact'
 import Hero from './Hero'
-import ProjectSection from './ProjectSection'
+import Show from './Show'
 import Skills from './Skills'
 import Vision from './Vision'
 
@@ -17,16 +16,12 @@ class MainPage extends Component {
     render() {
         return (
             <>
-                <Cursor />
-
                 <Hero />
+                {/* <Show />
                 <About />
-                <ProjectSection />
                 <Skills />
-
                 <Vision />
-
-                <Contact />
+                <Contact /> */}
             </>
         )
     }

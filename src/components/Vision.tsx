@@ -1,5 +1,4 @@
 import Title from './Title'
-import '../styles/Vision.css'
 
 export default function Vision(props: any) {
     return (

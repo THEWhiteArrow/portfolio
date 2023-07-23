@@ -1,4 +1,3 @@
-import LinkCustom from "./LinkCustom"
 type Types = "linkedin" | "github" | "facebook" | "instagram"
 
 type Props = {
@@ -40,9 +39,11 @@ export default function SocialIcon(props: Props) {
             break;
     }
     return (
-        <LinkCustom className="SocialIcon" to={to} style={{ border: 'none' }}>
+        // <LinkCustom className="SocialIcon" to={to} style={{ border: 'none' }}>
+        <>
             {icon}
-        </LinkCustom>
+        </>
+        // </LinkCustom>
 
     )
 }

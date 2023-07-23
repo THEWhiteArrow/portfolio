@@ -1,6 +1,5 @@
 import { Component, ReactNode } from 'react'
 import SkillItem from './SkillItem'
-import '../styles/Skills.css'
 import Title from './Title'
 
 type Props = {

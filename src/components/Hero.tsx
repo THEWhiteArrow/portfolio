@@ -1,7 +1,5 @@
 import { Component } from 'react'
-import '../styles/Hero.css'
-import LinkCustom from "./LinkCustom"
-import HeroFace from './HeroFace'
+import { ReactComponent as FaceSvg } from '../assets/svg/face.svg'
 
 export default class Hero extends Component {
     constructor(props: any) {
@@ -13,9 +11,8 @@ export default class Hero extends Component {
         return (
             <div className="Hero">
 
-                <div className="Hero-info">
-
-                    <h1 className="Hero-title">
+                <div >
+                    <h1 >
                         <span className='animate'>Hello</span>
                         <span className="animate">, </span>
                         <br />
@@ -25,22 +22,23 @@ export default class Hero extends Component {
                         <span className='animate'>Damian</span>
                     </h1>
 
-                    <p className="Hero-paragraph">
+                    <p >
                         Welcome to my digital realm!
                         <br />
                         I'm a 20-year-old Software Technology Engineering Student, fueled by an insatiable curiosity and passion for the world of programming. As a tech enthusiast, I find solace in crafting elegant and efficient code, transforming ideas into reality, and constantly pushing the boundaries of what's possible.
                     </p>
 
-                    <div className="Hero-navigation">
-                        <LinkCustom className='Hero-link' to='#'>About</ LinkCustom>
+                    <div  >
+                        {/* <LinkCustom className='Hero-link' to='#'>About</ LinkCustom>
                         <LinkCustom className='Hero-link' to='#'>Projects</LinkCustom>
                         <LinkCustom className='Hero-link' to='#'>Experience</ LinkCustom>
-                        <LinkCustom className='Hero-link' to='#'>Contact</ LinkCustom>
+                        <LinkCustom className='Hero-link' to='#'>Contact</ LinkCustom> */}
                     </div>
 
                 </div>
-                <div className="Hero-face">
-                    <HeroFace />
+
+                <div >
+                    <FaceSvg />
                 </div>
 
 

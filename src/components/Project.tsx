@@ -1,5 +1,3 @@
-import { StringLiteral } from "typescript"
-import LinkCustom from "./LinkCustom"
 
 type Props = {
     title?: string,
@@ -9,13 +7,13 @@ type Props = {
 }
 export default function Project(props: Props) {
     const { title, description, imgUrl, imgAlt } = props
-    const image = require(`../assets/${imgUrl}`)
+    // const image = require(`../assets/${imgUrl}`)
     return (
         <div className="Project">
             <div className="Project-img-container">
-                <LinkCustom to={`/project/${title}`}>
+                {/* <LinkCustom to={`/project/${title}`}>
                     <img src={image} alt={imgAlt} />
-                </LinkCustom>
+                </LinkCustom> */}
             </div>
             <div className="Project-info-container">
 

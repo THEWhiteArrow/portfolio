@@ -1,11 +1,5 @@
 import { Component } from 'react'
-import '../styles/About.css'
-import LinkCustom from './LinkCustom';
 import Title from './Title';
-import LazyHorizontalScrollText from './LazyHorizontalScrollText';
-import Gym from './Gym';
-import CodingSvg from './CodingSvg';
-import AdventureSvg from './AdventureSvg';
 
 
 export default class About extends Component {
@@ -30,7 +24,7 @@ export default class About extends Component {
                         </p>
 
                         <p className='About-paragraph'>
-                            <Gym />
+                            {/* <Gym /> */}
                         </p>
                     </div>
 
@@ -41,7 +35,7 @@ export default class About extends Component {
                         </p>
 
                         <p className='About-paragraph'>
-                            <CodingSvg />
+                            {/* <CodingSvg /> */}
                         </p>
                     </div>
 
@@ -51,16 +45,16 @@ export default class About extends Component {
                         </p>
 
                         <p className='About-paragraph'>
-                            <AdventureSvg />
+                            {/* <AdventureSvg /> */}
                         </p>
                     </div>
 
-                    <LinkCustom className='About-action' to='#'>
+                    {/* <LinkCustom className='About-action' to='#'>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 17L12 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             <path d="M12.2034 21.7152L16.0964 16.265C16.4746 15.7355 16.0961 15 15.4454 15L8.55455 15C7.90385 15 7.52535 15.7355 7.90356 16.265L11.7966 21.7152C11.8963 21.8548 12.1037 21.8548 12.2034 21.7152Z" fill="currentColor" />
                         </svg>
-                    </LinkCustom>
+                    </LinkCustom> */}
                 </div>
             </div>
         )

@@ -1,4 +1,3 @@
-import '../styles/Title.css'
 type Props = {
     content: string,
     colorType: 'black' | 'white',
