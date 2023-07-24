@@ -11,7 +11,7 @@ export default function Cursor() {
 
     return (
         <div
-            className="Cursor"
+            className="Cursor animate-pulse"
             style={{
                 pointerEvents: 'none',
                 zIndex: 1000,

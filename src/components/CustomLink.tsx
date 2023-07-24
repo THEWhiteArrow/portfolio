@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+
+import '../styles/CustomLink.css'
 import { ReactComponent as ElipseSvg } from '../assets/svg/elipse.svg'
 import { ReactComponent as Elipse2Svg } from '../assets/svg/elipse2.svg'
 import { ReactComponent as Elipse3Svg } from '../assets/svg/elipse3.svg'

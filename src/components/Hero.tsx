@@ -37,11 +37,11 @@ export default class Hero extends Component {
 
                         <div className='mt-10 mb-5 flex flex-col sm:flex-row justify-between lg:pr-20 text-center'>
                             <CustomLink className='p-4 mt-4 lg:mt-0' to="#about">About</CustomLink>
-                            <CustomLink className='p-4 mt-4 lg:mt-0' to="#showoff">Showoff</CustomLink>
+                            <CustomLink className='p-4 mt-4 lg:mt-0' to="#Projects">Projects</CustomLink>
                             <CustomLink className='p-4 mt-4 lg:mt-0' to="#vision">Skills</CustomLink>
                             <CustomLink className='p-4 mt-4 lg:mt-0' to="#contact">Contact</CustomLink>
                             {/* <CustomLink className='border-solid border-2 border-black p-2 bg-white hover:bg-black hover:text-white ease-in-out duration-200' to="#about">About</CustomLink>
-                            <CustomLink className='border-solid border-2 border-black p-2 bg-white hover:bg-black hover:text-white ease-in-out duration-200' to="#showoff">Showoff</CustomLink>
+                            <CustomLink className='border-solid border-2 border-black p-2 bg-white hover:bg-black hover:text-white ease-in-out duration-200' to="#Projects">Projects</CustomLink>
                             <CustomLink className='border-solid border-2 border-black p-2 bg-white hover:bg-black hover:text-white ease-in-out duration-200' to="#vision">Skills</CustomLink>
                             <CustomLink className='border-solid border-2 border-black p-2 bg-white hover:bg-black hover:text-white ease-in-out duration-200' to="#contact">Contact</CustomLink> */}
                         </div>
