@@ -7,36 +7,36 @@
    viewBox="0 0 200 100"
    version="1.1"
    id="svg5"
-   inkscapeVersion="1.1.2 (0a00cf5339, 2022-02-04)"
-   sodipodiDocname="elipse.svg"
-   xmlnsInkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlnsSodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   inkscapeversion="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodidocname="elipse.svg"
+   xmlnsinkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlnssodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
-   xmlnsSvg="http://www.w3.org/2000/svg">
+   xmlnssvg="http://www.w3.org/2000/svg">
   <sodipodiNamedview
      id="namedview7"
      pagecolor="#ffffff"
      bordercolor="#999999"
      borderopacity="1"
-     inkscapePageshadow="0"
-     inkscapePageopacity="0"
-     inkscapePagecheckerboard="0"
-     inkscapeDocument-units="mm"
+     inkscapepageshadow="0"
+     inkscapepageopacity="0"
+     inkscapepagecheckerboard="0"
+     inkscapedocument-units="mm"
      showgrid="false"
-     inkscapeZoom="0.69664703"
-     inkscapeCx="396.90114"
-     inkscapeCy="216.75252"
-     inkscapeWindow-width="1920"
-     inkscapeWindow-height="1043"
-     inkscapeWindow-x="0"
-     inkscapeWindow-y="0"
-     inkscapeWindow-maximized="1"
-     inkscapeCurrent-layer="layer1" />
+     inkscapezoom="0.69664703"
+     inkscapecx="396.90114"
+     inkscapecy="216.75252"
+     inkscapewindow-width="1920"
+     inkscapewindow-height="1043"
+     inkscapewindow-x="0"
+     inkscapewindow-y="0"
+     inkscapewindow-maximized="1"
+     inkscapecurrent-layer="layer1" />
   <defs
      id="defs2" />
   <g
-     inkscapeLabel="Layer 1"
-     inkscapeGroupmode="layer"
+     inkscapelabel="Layer 1"
+     inkscapegroupmode="layer"
      id="layer1">
     <path
        style="fill:none;stroke-linecap:butt;stroke-linejoin:miter"
