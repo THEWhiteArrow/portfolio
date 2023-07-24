@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import About from './About'
 import Contact from './Contact'
 import Hero from './Hero'
-import Show from './Show'
+import Showoff from './Showoff'
 import Skills from './Skills'
 import Vision from './Vision'
 
@@ -17,7 +17,7 @@ class MainPage extends Component {
         return (
             <>
                 <Hero />
-                {/* <Show />
+                {/* <Showoff />
                 <About />
                 <Skills />
                 <Vision />

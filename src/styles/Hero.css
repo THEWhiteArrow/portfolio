@@ -1,0 +1,153 @@
+h1 {
+    color: transparent;
+
+    -webkit-text-stroke-color: #000000d5;
+    -webkit-text-stroke-width: 2px;
+}
+
+.animate {
+    animation: animateFont 12s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+}
+
+.animate:nth-of-type(1) {
+    animation-delay: 0s;
+}
+
+.animate:nth-of-type(2) {
+    animation-delay: 1s;
+}
+
+.animate:nth-of-type(3) {
+    animation-delay: 2s;
+}
+
+.animate:nth-of-type(4) {
+    animation-delay: 3s;
+}
+
+.animate:nth-of-type(5) {
+    animation-delay: 4s;
+}
+
+.animate:nth-of-type(6) {
+    animation-delay: 5s;
+}
+
+@keyframes animateFont {
+    0% {
+        color: transparent;
+    }
+
+    50% {
+        color: #000000d5;
+    }
+
+    100% {
+        color: transparent;
+    }
+
+}
+
+.custom-link path {
+    stroke-opacity: 1;
+    stroke-width: 2px;
+    stroke: black;
+    stroke-dasharray: 1100;
+    stroke-dashoffset: 550;
+    transition: stroke-dasharray ease-in-out .3s, stroke-dashoffset ease-in-out .3s;
+
+}
+
+
+.custom-link:hover path {
+    stroke-dasharray: 1100;
+    stroke-dashoffset: 100;
+}
+
+
+
+
+.custom-link:nth-of-type(1) {
+    animation-delay: 0.75s;
+}
+
+.custom-link:nth-of-type(2) {
+    animation-delay: 1.5s;
+}
+
+.custom-link:nth-of-type(3) {
+    animation-delay: 2.25s;
+}
+
+.custom-link:nth-of-type(4) {
+    animation-delay: 3s;
+}
+
+@media screen and (min-width: 500px) {
+    .custom-link {
+        animation: float 8s linear infinite;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translate3d(0, 0px, 0);
+    }
+
+    25% {
+        transform: translate3d(0, -10px, 0);
+    }
+
+
+
+    75% {
+        transform: translate3d(0, 10px, 0);
+    }
+
+    100% {
+        transform: translate3d(0, 0px, 0);
+    }
+}
+
+
+
+
+
+
+
+
+
+:root {
+    --startDashArray: 275;
+    --endDashArray: 600;
+    --startDashOffset: 300;
+    --endDashOffset: 550;
+}
+
+.animateFace path {
+    stroke: white;
+    stroke-width: 2px;
+    stroke-dasharray: var(--startDashArray);
+    stroke-dashoffset: var(--startDashOffset);
+    /* fill-opacity: 0; */
+    animation: faceAnimation 8s ease-in-out infinite !important;
+}
+
+
+@keyframes faceAnimation {
+    0% {
+        stroke-dasharray: var(--startDashArray);
+        stroke-dashoffset: var(--startDashOffset);
+    }
+
+    50% {
+        stroke-dasharray: var(--endDashArray);
+        stroke-dashoffset: var(--endDashOffset);
+    }
+
+    100% {
+        stroke-dasharray: var(--startDashArray);
+        stroke-dashoffset: var(--startDashOffset);
+    }
+
+}
