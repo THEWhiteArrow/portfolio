@@ -6,9 +6,10 @@ import Projects from './Projects'
 import Skills from './Skills'
 import Vision from './Vision'
 
+import { GlobalState } from '../App'
 
-class MainPage extends Component {
-    constructor(props: any) {
+class MainPage extends Component<GlobalState> {
+    constructor(props: GlobalState) {
         super(props)
     }
 
@@ -17,7 +18,7 @@ class MainPage extends Component {
         return (
             <>
                 <Hero />
-                <Projects />
+                <Projects windowWidth={this.props.windowWidth} />
                 {/* <About />
                 <Skills />
                 <Vision />

@@ -5,9 +5,14 @@ import { useEffect, useRef, useState } from 'react';
 import MainPage from './components/MainPage';
 import Cursor from './components/Cursor';
 
+type GlobalState = {
+  windowWidth: number
+}
+
 function App() {
+  let [windowWidth, setWindowWidth] = useState(window.innerWidth)
   const onResize = (e: any) => {
-    console.log(window.innerWidth)
+    setWindowWidth(window.innerWidth)
   }
 
 
@@ -20,10 +25,11 @@ function App() {
   return (
     <div className="App text-black">
       <Cursor />
-      <MainPage />
+      <MainPage windowWidth={windowWidth} />
 
     </div>
   );
 }
 
+export type { GlobalState };
 export default App;

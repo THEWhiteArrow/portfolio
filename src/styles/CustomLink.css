@@ -5,9 +5,11 @@
     stroke-dasharray: 1100;
     stroke-dashoffset: 550;
     transition: stroke-dasharray ease-in-out .3s, stroke-dashoffset ease-in-out .3s;
-
 }
 
+.custom-link.stroke-white path {
+    stroke: white;
+}
 
 .custom-link:hover path {
     stroke-dasharray: 1100;
