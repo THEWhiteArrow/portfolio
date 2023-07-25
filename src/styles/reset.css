@@ -143,26 +143,24 @@ table {
     box-sizing: border-box;
 }
 
-/* html {
-    min-height: 100vh;
-    height: 100%;
-    min-width: 100vw;
-    width: 100%;
-}
 
+
+html,
 body,
 #root,
 .App {
-    height: 100%;
-    width: 100%;
-} */
-
-html {
     width: 100%;
     scroll-behavior: smooth !important;
 }
 
-body {
+.min-h-screen {
     min-height: 100vh;
+}
+
+.min-h-full {
+    min-height: 100%;
+}
+
+.h-full {
     height: 100%;
 }

@@ -40,6 +40,8 @@ module.exports = {
     extend: {},
     minWidth: dimenstions,
     maxWidth: dimenstions,
+    minHeight: dimenstions,
+    maxHeight: dimenstions,
     screens: {
       'sm': '500px',
       'md': '768px',

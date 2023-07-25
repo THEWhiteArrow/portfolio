@@ -5,16 +5,15 @@ type Props = {
 export default function SkillItem(props: Props) {
     const url = `https://skillicons.dev/icons?i=${props.name}`
     return (
-        <div className="SkillItem">
-            <div className="SkillItem-img-container">
+        <div className="SkillItem h-40 w-40 flex flex-col justify-center items-center hover:animation-pause">
 
-                <img src={url} alt={'skill ' + props.name} />
+            <div className="SkillItem-img-container relative h-full flex justify-center">
+                <img className='h-full relative' src={url} alt={'skill ' + props.name} />
             </div>
-            <div className="SkillItem-info">
-                {props.name}
-                <br />
-                {props.proficiency}
+            <div className="SkillItem-info text-center">
+                {props.name} <br />  {props.proficiency}
             </div>
+
         </div>
     )
 }

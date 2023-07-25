@@ -19,10 +19,12 @@ class MainPage extends Component<GlobalState> {
             <>
                 <Hero />
                 <Projects windowWidth={this.props.windowWidth} />
-                {/* <About />
+                <About />
                 <Skills />
+                {/*
                 <Vision />
-                <Contact /> */}
+                <Contact /> 
+                */}
             </>
         )
     }

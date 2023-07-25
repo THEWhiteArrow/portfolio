@@ -13,6 +13,7 @@ function App() {
   let [windowWidth, setWindowWidth] = useState(window.innerWidth)
   const onResize = (e: any) => {
     setWindowWidth(window.innerWidth)
+    console.log(windowWidth)
   }
 
 

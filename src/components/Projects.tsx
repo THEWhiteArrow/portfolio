@@ -16,7 +16,6 @@ export default class Projects extends Component<GlobalState> {
     render() {
         let projectDisplayCount = 3
         let width = this.props.windowWidth
-        console.log(width)
         if (width < 500) projectDisplayCount = 1
         else if (width < 768) projectDisplayCount = 1
         else if (width < 1024) projectDisplayCount = 1

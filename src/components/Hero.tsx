@@ -12,11 +12,13 @@ export default class Hero extends Component {
 
     render() {
         return (
-            <section className="Hero min-h-screen h-full flex">
-                <div className="container flex flex-col md:flex-row py-8 relative">
+            <section className="Hero min-h-screen h-full flex items-center ">
 
 
-                    <div className='text-2xl lg:w-7/12 h-full flex flex-col justify-center content-center'>
+                <div className="h-full  container grow flex flex-col md:flex-row py-8 relative">
+
+
+                    <div className='h-full text-2xl lg:w-7/12 flex flex-col justify-center content-center'>
 
                         <h1 className='text-8xl'>
                             <span className='animate'>Hello</span>
@@ -48,7 +50,7 @@ export default class Hero extends Component {
                     </div >
 
 
-                    <div className='hidden lg:block lg:w-5/12 self-center justify-self-center'>
+                    <div className='h-full hidden lg:block lg:w-5/12 self-center justify-self-center'>
                         <FaceSvg width='100%' className='animateFace' />
                     </div>
                 </div >

@@ -1,19 +1,11 @@
 import { Component, ReactNode } from 'react'
 import SkillItem from './SkillItem'
 import Title from './Title'
+import '../styles/Skills.css'
 
-type Props = {
-    style?: {}
-    handleHeight?: Function
-}
+export default class Skills extends Component {
 
-export default class Skills extends Component<Props>{
-    componentDidMount(): void {
-        if (this.props.handleHeight)
-            this.props.handleHeight(document.querySelector('.Skills')?.clientHeight)
-    }
-
-    render(): ReactNode {
+    render() {
         enum Options {
             'Beginner',
             'Advanced',
@@ -49,12 +41,12 @@ export default class Skills extends Component<Props>{
         const compareFn = (a: SkillType, b: SkillType) => a.proficiency > b.proficiency ? -1 : 1
 
         return (
-            <div className='Skills' style={this.props.style}>
-                <div className='Skills-container'>
+            <div className='Skills min-h-screen h-full bg-black'>
+                <div className='container py-8 relative flex flex-col'>
 
                     <Title content='Skills' colorType='white' />
 
-                    <div className='Skills-items'>
+                    <div className='Skills-items text-xl my-10 flex flex-wrap gap-10 justify-center items-center'>
                         {skills.sort(compareFn).map(skill => <SkillItem key={skill.name} name={skill.name} proficiency={Options[skill.proficiency]} />)}
                     </div>
                 </div>
