@@ -1,9 +1,9 @@
 import Title from './Title'
 import '../styles/Vision.css'
 
-export default function Vision(props: any) {
+export default function Vision() {
     return (
-        <div className='Vision min-h-screen flex flex-col  '  >
+        <section id="vision" className='Vision min-h-screen flex flex-col  '  >
             <div className='container py-8 relative flex flex-col grow  '>
                 <Title content='My Vision' colorType='black' className='title' />
 
@@ -20,6 +20,6 @@ export default function Vision(props: any) {
                 </div>
 
             </div>
-        </div>
+        </section>
     )
 }

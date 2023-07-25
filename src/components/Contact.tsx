@@ -20,7 +20,7 @@ export default class Contact extends Component {
 
 
         return (
-            <div className="Contact flex bg-black text-white">
+            <section id="contact" className="Contact flex bg-black text-white">
                 <div className="container py-8 relative grow flex flex-col ">
                     <Title content='Contact' colorType='white' />
 
@@ -73,7 +73,7 @@ export default class Contact extends Component {
 
 
                 </div>
-            </div>
+            </section>
         )
     }
 }

@@ -35,6 +35,10 @@
     animation-delay: 3s;
 }
 
+.custom-link:nth-of-type(5) {
+    animation-delay: 4s;
+}
+
 @media screen and (min-width: 500px) {
     .custom-link {
         animation: float 8s linear infinite;

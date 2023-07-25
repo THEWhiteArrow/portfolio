@@ -12,7 +12,7 @@ export default class Hero extends Component {
 
     render() {
         return (
-            <section className="Hero min-h-screen h-full flex items-center ">
+            <section id="hero" className="Hero min-h-screen h-full flex items-center ">
 
 
                 <div className="h-full  container grow flex flex-col md:flex-row py-8 relative">
@@ -38,14 +38,12 @@ export default class Hero extends Component {
 
 
                         <div className='mt-10 mb-5 flex flex-col sm:flex-row justify-between lg:pr-20 text-center'>
-                            <CustomLink className='p-4 mt-4 lg:mt-0' to="#about">About</CustomLink>
-                            <CustomLink className='p-4 mt-4 lg:mt-0' to="#Projects">Projects</CustomLink>
-                            <CustomLink className='p-4 mt-4 lg:mt-0' to="#vision">Skills</CustomLink>
-                            <CustomLink className='p-4 mt-4 lg:mt-0' to="#contact">Contact</CustomLink>
-                            {/* <CustomLink className='border-solid border-2 border-black p-2 bg-white hover:bg-black hover:text-white ease-in-out duration-200' to="#about">About</CustomLink>
-                            <CustomLink className='border-solid border-2 border-black p-2 bg-white hover:bg-black hover:text-white ease-in-out duration-200' to="#Projects">Projects</CustomLink>
-                            <CustomLink className='border-solid border-2 border-black p-2 bg-white hover:bg-black hover:text-white ease-in-out duration-200' to="#vision">Skills</CustomLink>
-                            <CustomLink className='border-solid border-2 border-black p-2 bg-white hover:bg-black hover:text-white ease-in-out duration-200' to="#contact">Contact</CustomLink> */}
+                            <CustomLink className='p-4 mt-4 lg:mt-0' to="/#about">About</CustomLink>
+                            <CustomLink className='p-4 mt-4 lg:mt-0' to="/#projects">Projects</CustomLink>
+                            <CustomLink className='p-4 mt-4 lg:mt-0' to="/#skills">Skills</CustomLink>
+                            <CustomLink className='p-4 mt-4 lg:mt-0' to="/#vision">Vision</CustomLink>
+                            <CustomLink className='p-4 mt-4 lg:mt-0' to="/#contact">Contact</CustomLink>
+
                         </div>
                     </div >
 

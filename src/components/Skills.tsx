@@ -41,7 +41,7 @@ export default class Skills extends Component {
         const compareFn = (a: SkillType, b: SkillType) => a.proficiency > b.proficiency ? -1 : 1
 
         return (
-            <div className='Skills min-h-screen h-full bg-black'>
+            <section id="skills" className='Skills min-h-screen h-full bg-black'>
                 <div className='container py-8 relative flex flex-col'>
 
                     <Title content='Skills' colorType='white' />
@@ -51,7 +51,7 @@ export default class Skills extends Component {
                     </div>
                 </div>
 
-            </div>
+            </section>
         )
     }
 }

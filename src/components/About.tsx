@@ -19,7 +19,7 @@ export default class About extends Component {
 
 
         return (
-            <div className="About  min-h-screen h-full flex"  >
+            <section id="about" className="About  min-h-screen h-full flex"  >
 
                 <div className='container flex flex-col py-8 relative text-'>
                     <Title content='About' colorType='black' className="About-title" />
@@ -38,7 +38,7 @@ export default class About extends Component {
 
                     </div>
                 </div>
-            </div>
+            </section>
         )
     }
 }
