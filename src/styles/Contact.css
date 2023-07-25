@@ -1,0 +1,57 @@
+.invalid-name,
+.invalid-email,
+.invalid-message,
+.valid-name,
+.valid-email,
+.valid-message {
+    position: relative;
+
+}
+
+.invalid-name::after,
+.invalid-email::after,
+.invalid-message::after,
+.valid-name::after,
+.valid-email::after,
+.valid-message::after {
+
+    color: rgb(254, 102, 102);
+    top: 100%;
+    width: 100%;
+    height: min-content;
+    position: absolute;
+
+    margin-top: 1px;
+    right: 0;
+    font-size: 1rem;
+}
+
+.valid-name::after,
+.valid-email::after,
+.valid-message::after {
+    color: rgb(153, 240, 153);
+}
+
+.invalid-name::after {
+    content: 'Name field is required';
+}
+
+.invalid-email::after {
+    content: 'Required valid email';
+}
+
+.invalid-message::after {
+    content: 'Message field is required';
+}
+
+.valid-name::after {
+    content: 'Name field is valid';
+}
+
+.valid-email::after {
+    content: 'Email is valid';
+}
+
+.valid-message::after {
+    content: 'Message is valid';
+}
