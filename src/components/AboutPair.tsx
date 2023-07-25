@@ -17,7 +17,7 @@ export default class AboutPair extends Component<Props> {
         const orderS = order === 'normal' ? 'order-1 md:order-2 md:ml-10' : 'order-1 md:mr-10'
         return (
             <>
-                <div className='AboutPair  flex flex-col items-center my-20 md:flex-row md:my-28'>
+                <div className='AboutPair  flex flex-col items-center my-5 md:flex-row md:my-10'>
                     <p className={` ${orderP} text-justify`}>
                         {this.props.children}
                     </p>

@@ -21,10 +21,8 @@ class MainPage extends Component<GlobalState> {
                 <Projects windowWidth={this.props.windowWidth} />
                 <About />
                 <Skills />
-                {/*
                 <Vision />
-                <Contact /> 
-                */}
+                <Contact />
             </>
         )
     }
