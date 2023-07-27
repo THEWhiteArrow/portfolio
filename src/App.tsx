@@ -10,15 +10,15 @@ type GlobalState = {
 
 function App() {
   let [windowWidth, setWindowWidth] = useState(window.innerWidth)
-  const onResize = (e: any) => {
-    setWindowWidth(window.innerWidth)
-    console.log(windowWidth) 
-  }
-
-
+  
+  
   useEffect(() => {
+    const onResize = () => {
+      setWindowWidth(window.innerWidth)
+      console.log(windowWidth) 
+    }
     window.addEventListener('resize', onResize); 
-  }, []);
+  }, [windowWidth]);
 
 
 

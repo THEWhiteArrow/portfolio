@@ -1,24 +1,35 @@
 /* eslint-disable @typescript-eslint/no-useless-constructor */
-import React, { Component } from 'react'  
-import 'aos/dist/aos.css'
- 
-type MyProps = {
-    name: string
-    children: React.ReactNode
-} 
-export default class Animation extends Component<MyProps> { 
+import React, { Component } from "react";
+import "aos/dist/aos.css";
+import Aos from "aos";
 
-    constructor(props: MyProps) {
-        super(props)
-    }
-    componentDidMount(): void { 
-        // Aos.init(this.props.data)
-    }
-    render() {
-        return (
-            <span data-aos={this.props.name} className='w-full h-full'>
-                {this.props.children}
-            </span>
-        )
-    }
+type MyProps = {
+  name: string;
+  anchor?: string;
+  delay?: number;
+  children: React.ReactNode;
+  className?: string;
+};
+export default class Animation extends Component<MyProps> {
+  constructor(props: MyProps) {
+    super(props);
+  }
+
+  componentDidUpdate(): void {
+    Aos.refresh();
+  }
+  render() {
+    console.log(this.props.name == "slide-left");
+    const { name, delay, anchor, className } = this.props;
+    return (
+      <span
+        data-aos={name}
+        data-aos-delay={delay}
+        data-aos-anchor-placement={anchor}
+        className={`w-full h-full ${className}`}
+      >
+        {this.props.children}
+      </span>
+    );
+  }
 }
