@@ -2,8 +2,9 @@ import { Component } from 'react'
 import { data } from '../scripts/projectData'
 import ProjectTile from './ProjectTile'
 import Title from './Title'
+import CustomLink from './CustomLink' 
 import '../styles/Projects.css'
-import CustomLink from './CustomLink'
+
 
 import { GlobalState } from '../App'
 
@@ -63,8 +64,8 @@ export default class Projects extends Component<GlobalState, MyState> {
 
         return (
             <section id="projects" className="Projects min-h-screen h-full flex bg-black text-white"  >
-                <div className="container py-8 mb-10 relative">
-                    <Title content='Projects' colorType='white' />
+                <div className="container py-8 mb-10 relative"> 
+                    <Title content='Projects' colorType='white' /> 
 
 
                     <div className='Projects-projects my-10 flex flex-row flex-wrap justify-evenly'>

@@ -1,19 +1,15 @@
 import { Component } from 'react'
 import Title from './Title';
 import AboutPair from './AboutPair';
-import '../styles/About.css'
+import '../styles/About.css' 
+
 
 import { ReactComponent as AdventureSvg } from '../assets/svg/adventure.svg'
 import { ReactComponent as GymSvg } from '../assets/svg/gym.svg'
 import { ReactComponent as CodingSvg } from '../assets/svg/coding.svg'
 
 
-export default class About extends Component {
-    constructor(props: any) {
-        super(props)
-    }
-
-
+export default class About extends Component { 
 
     render() {
 
@@ -22,13 +18,14 @@ export default class About extends Component {
             <section id="about" className="About  min-h-screen h-full flex"  >
 
                 <div className='container flex flex-col py-8 relative text-'>
+                
                     <Title content='About' colorType='black' className="About-title" />
 
                     <div className='flex flex-col text-2xl'>
 
                         <AboutPair order="normal" svg={<GymSvg className='w-full h-full' />}>
                             Beyond the lines of code, you'll often find me embracing life with a vigor that knows no bounds. My journey is a blend of intellectual pursuits and a zest for living. When I'm not in front of a screen, I'm pumping iron at the gym, traveling to uncharted destinations, and savoring the delights of wholesome nutrition.
-                        </AboutPair>
+                        </AboutPair> 
                         <AboutPair order="reverse" svg={<CodingSvg className='w-full h-full' />}>
                             With every project and challenge, I strive not only to master the craft of technology but to approach it mindfully. I believe in the power of technology to shape a brighter future, and I'm determined to wield this power responsibly and ethically.
                         </AboutPair>

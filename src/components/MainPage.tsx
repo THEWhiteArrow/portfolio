@@ -4,16 +4,16 @@ import Contact from './Contact'
 import Hero from './Hero'
 import Projects from './Projects'
 import Skills from './Skills'
-import Vision from './Vision'
-
+import Vision from './Vision' 
 import { GlobalState } from '../App'
 
+import Aos from 'aos'
+
 class MainPage extends Component<GlobalState> {
-    constructor(props: GlobalState) {
-        super(props)
+    
+    componentDidMount(): void {
+        Aos.init()
     }
-
-
     render() {
         return (
             <>

@@ -6,10 +6,12 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@types/aos": "^3.0.4",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.31",
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
+    "aos": "^2.3.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.2",
@@ -21,7 +23,6 @@
   "scripts": {
     "start": "react-scripts start",
     "magic": "react-scripts start",
-    "tailwind": "npx tailwindcss -i ./src/styles/tailwind_setup.css -o ./src/styles/tailwind.css --watch",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -30,7 +31,11 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "no-useless-constructor": 0,
+      "constructor-super": 0
+    }
   },
   "browserslist": {
     "production": [
