@@ -8,8 +8,12 @@ type Props = PropsType & ProjectDataType;
 
 export default function Project(props: Props) {
   const { title, description, imgName, imgAlt, shadowColor, shorten } = props;
-
-  const image = require(`../assets/image/${imgName}`);
+  let image = null;
+  try {
+    image = require(`../assets/image/${imgName}`);
+  } catch (err) {
+    console.log(err);
+  }
 
   return (
     <div className={`Project p-5 min-w-10 max-w-25 relative`}>
