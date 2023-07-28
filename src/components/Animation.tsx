@@ -19,7 +19,6 @@ export default class Animation extends Component<MyProps> {
     Aos.refresh();
   }
   render() {
-    console.log(this.props.name == "slide-left");
     const { name, delay, anchor, className } = this.props;
     return (
       <span

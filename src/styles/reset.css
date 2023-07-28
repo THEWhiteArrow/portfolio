@@ -153,6 +153,10 @@ body,
     scroll-behavior: smooth !important;
 }
 
+body{
+    overflow-x: hidden;
+}
+
 .min-h-screen {
     min-height: 100vh;
 }

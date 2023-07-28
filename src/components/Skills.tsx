@@ -1,4 +1,4 @@
-import { Component, ReactNode } from "react";
+import { Component } from "react";
 import SkillItem from "./SkillItem";
 import Title from "./Title";
 import "../styles/Skills.css";

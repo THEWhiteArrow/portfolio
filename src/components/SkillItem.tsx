@@ -20,21 +20,22 @@ export default function SkillItem(props: Props) {
   const rAnimation = animations[Math.floor(Math.random() * animations.length)];
   return (
     <div className="SkillItem mt-20 h-20 w-20  lg:mt-32 lg:h-32 lg:w-32 flex flex-col justify-center items-center hover:animation-pause">
-      <div className="SkillItem-img-container relative h-full flex justify-center">
-        <Animation name={rAnimation}>
+      <div className="relative h-full flex justify-center">
+        <Animation name={rAnimation} className="flex">
           <img
-            className="h-full relative mx-auto"
+            className="w-full h-full max-h-4 md:max-h-5"
             src={url}
             alt={"skill " + props.name}
           />
         </Animation>
       </div>
-      <div className="SkillItem-info text-center">
+
+      <Animation
+        name={rAnimation}
+        className="w-min h-min SkillItem-info text-center"
+      >
         {props.name} <br /> {props.proficiency}
-      </div>
-      {/* <Animation name={rAnimation} className="SkillItem-info text-center">
-        {props.name} <br /> {props.proficiency}
-      </Animation> */}
+      </Animation>
     </div>
   );
 }
