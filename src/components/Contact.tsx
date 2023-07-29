@@ -96,28 +96,52 @@ export default class Contact extends Component<any, any> {
                   delay={100}
                   className="w-min h-min"
                 >
-                  <FacebookSvg className="hover:-translate-y-3 duration-200" />
+                  <Link
+                    target="_blank"
+                    to="https://www.facebook.com/profile.php?id=100028115170023"
+                    aria-label="My Facebook"
+                  >
+                    <FacebookSvg className="hover:-translate-y-3 duration-200" />
+                  </Link>
                 </Animation>
                 <Animation
                   name="zoom-in-up"
                   delay={200}
                   className="w-min h-min"
                 >
-                  <GithubSvg className="hover:-translate-y-3 duration-200" />
+                  <Link
+                    target="_blank"
+                    to="https://github.com/THEWhiteArrow"
+                    aria-label="My Github"
+                  >
+                    <GithubSvg className="hover:-translate-y-3 duration-200" />
+                  </Link>
                 </Animation>
                 <Animation
                   name="zoom-in-up"
                   delay={300}
                   className="w-min h-min"
                 >
-                  <LinkedinSvg className="hover:-translate-y-3 duration-200" />
+                  <Link
+                    target="_blank"
+                    to="https://www.linkedin.com/in/damian-trafialek/"
+                    aria-label="My LinkedIn"
+                  >
+                    <LinkedinSvg className="hover:-translate-y-3 duration-200" />
+                  </Link>
                 </Animation>
                 <Animation
                   name="zoom-in-up"
                   delay={400}
                   className="w-min h-min"
                 >
-                  <InstagramSvg className="hover:-translate-y-3 duration-200" />
+                  <Link
+                    target="_blank"
+                    to="https://www.instagram.com/dami_trafi/"
+                    aria-label="My Instagram"
+                  >
+                    <InstagramSvg className="hover:-translate-y-3 duration-200" />
+                  </Link>
                 </Animation>
               </div>
               <Animation
