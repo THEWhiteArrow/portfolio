@@ -43,7 +43,7 @@ export default class Contact extends Component<any, any> {
     this.setState({ isValidating: true, nameValid, emailValid, messageValid });
     if (nameValid && emailValid && messageValid) {
       console.log("succeeded in validating");
-      // this.sendForm();
+      this.sendForm();
     } else {
       console.log("failed to validate");
     }
