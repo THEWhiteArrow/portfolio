@@ -10,7 +10,7 @@ import { ReactComponent as InstagramSvg } from "../assets/svg/instagram.svg";
 import { Link } from "react-router-dom";
 
 import Animation from "./Animation";
-import { Navigate } from "react-router-dom";
+// import { Navigate } from "react-router-dom";
 
 export default class Contact extends Component<any, any> {
   constructor(props: any) {
