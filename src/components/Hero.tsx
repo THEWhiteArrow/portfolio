@@ -39,27 +39,42 @@ export default class Hero extends Component {
 
             <div className="mt-10 mb-5 flex flex-col sm:flex-row justify-between lg:pr-20 text-center">
               <Animation name="fade-up" delay={100}>
-                <CustomLink className="p-4 mt-4 lg:mt-0" to="/#about">
+                <CustomLink
+                  className="p-4 mt-4 lg:mt-0 animation-delay-1"
+                  to="/#about"
+                >
                   About
                 </CustomLink>
               </Animation>
               <Animation name="fade-up" delay={200}>
-                <CustomLink className="p-4 mt-4 lg:mt-0" to="/#projects">
+                <CustomLink
+                  className="p-4 mt-4 lg:mt-0 animation-delay-2"
+                  to="/#projects"
+                >
                   Projects
                 </CustomLink>
               </Animation>
               <Animation name="fade-up" delay={300}>
-                <CustomLink className="p-4 mt-4 lg:mt-0" to="/#skills">
+                <CustomLink
+                  className="p-4 mt-4 lg:mt-0 animation-delay-3"
+                  to="/#skills"
+                >
                   Skills
                 </CustomLink>
               </Animation>
               <Animation name="fade-up" delay={400}>
-                <CustomLink className="p-4 mt-4 lg:mt-0" to="/#vision">
+                <CustomLink
+                  className="p-4 mt-4 lg:mt-0 animation-delay-4"
+                  to="/#vision"
+                >
                   Vision
                 </CustomLink>
               </Animation>
               <Animation name="fade-up" delay={500}>
-                <CustomLink className="p-4 mt-4 lg:mt-0" to="/#contact">
+                <CustomLink
+                  className="p-4 mt-4 lg:mt-0 animation-delay-5"
+                  to="/#contact"
+                >
                   Contact
                 </CustomLink>
               </Animation>
