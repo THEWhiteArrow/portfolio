@@ -40,35 +40,32 @@ export default class Contact extends Component<any, any> {
     const emailValid = this.email(email);
     const messageValid = this.required(message);
 
-    console.log(nameValid, emailValid, messageValid);
-
     this.setState({ isValidating: true, nameValid, emailValid, messageValid });
     if (nameValid && emailValid && messageValid) {
       console.log("succeeded in validating");
-      this.sendForm();
+      // this.sendForm();
     } else {
       console.log("failed to validate");
     }
   };
 
-  encode = (data: any) => {
-    return Object.keys(data)
-      .map(
-        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-      )
-      .join("&");
-  };
-
-  sendForm = () => {
-    const { name, email, message } = this.state;
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: this.encode({ "form-name": "contact", name, email, message }),
-    })
-      .then(() => Navigate({ to: "/thank-you/", replace: true }))
-      .catch((error) => Navigate({ to: "/uups/", replace: true }));
-  };
+  // encode = (data: any) => {
+  //   return Object.keys(data)
+  //     .map(
+  //       (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+  //     )
+  //     .join("&");
+  // };
+  // sendForm = () => {
+  //   const { name, email, message } = this.state;
+  //   fetch("/", {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
+  //     body: this.encode({ "form-name": "contact", name, email, message }),
+  //   })
+  //     .then(() => Navigate({ to: "/thank-you/", replace: true }))
+  //     .catch((error) => Navigate({ to: "/uups/", replace: true }));
+  // };
 
   handleChangeCupture = (e: any) => {
     this.setState(
@@ -180,7 +177,6 @@ export default class Contact extends Component<any, any> {
               onSubmit={this.handleSubmit}
               className="py-10 shadow-md rounded grow flex flex-col justify-center md:pl-10"
             >
-              {/* <input type="hidden" name="form-name" value="contact" /> */}
               <Animation name="zoom-out-left">
                 <div>
                   <p>Or email me directly on </p>
