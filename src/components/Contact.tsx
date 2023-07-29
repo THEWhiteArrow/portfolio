@@ -157,7 +157,7 @@ export default class Contact extends Component<any, any> {
               name="contact"
               method="POST"
               data-netlify={true}
-              onSubmitCapture={this.handleSubmit}
+              // onSubmitCapture={this.handleSubmit}
               className="py-10 shadow-md rounded grow flex flex-col justify-center md:pl-10"
             >
               <Animation name="zoom-out-left">
