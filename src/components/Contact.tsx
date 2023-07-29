@@ -11,6 +11,12 @@ import { Link } from "react-router-dom";
 
 import Animation from "./Animation";
 
+const encode = (data: any) => {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+};
+
 export default class Contact extends Component<any, any> {
   constructor(props: any) {
     super(props);
@@ -30,6 +36,7 @@ export default class Contact extends Component<any, any> {
     new RegExp("^\\w(\\w*|\\.[^.]+)*@[\\w]+\\.[a-zA-Z]{2,}$").test(value);
 
   handleSubmit = (e: any) => {
+    e.preventDefault();
     this.setState({ isValidating: true });
     const { name, email, message } = this.state;
 
@@ -43,27 +50,17 @@ export default class Contact extends Component<any, any> {
       this.sendForm();
     } else {
       console.log("failed to validate");
-      e.preventDefault();
     }
   };
 
-  encode = (data: any) => {
-    return Object.keys(data)
-      .map(
-        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-      )
-      .join("&");
-  };
   sendForm = () => {
-    console.log("Sending the form...");
-    const { name, email, message } = this.state;
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: this.encode({ "form-name": "contact", name, email, message }),
+      body: encode({ "form-name": "contact", ...this.state }),
     })
-      .then(() => console.log("Submitted succcessfully"))
-      .catch((error) => console.log("Failed to submit :("));
+      .then(() => alert("Success!"))
+      .catch((error) => alert(error));
   };
 
   handleChangeCupture = (e: any) => {
@@ -172,12 +169,10 @@ export default class Contact extends Component<any, any> {
             </div>
 
             <form
-              // method="POST"
-              // name="contact"
               onSubmit={this.handleSubmit}
               className="py-10 shadow-md rounded grow flex flex-col justify-center md:pl-10"
             >
-              <input type="hidden" name="form-name" value="contact" />
+              {/* <input type="hidden" name="form-name" value="contact" /> */}
               <Animation name="zoom-out-left">
                 <div>
                   <p>Or email me directly on </p>
