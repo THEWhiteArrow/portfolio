@@ -75,8 +75,8 @@ export default class Projects extends Component<GlobalState, MyState> {
 
     if (this.state.projectsDisplayed < data.length || true) {
       readMore = (
-        <div className="relative flex flex-col py-10">
-          <div className="flex flex-row flex-wrap justify-evenly">
+        <div className="relative">
+          <div className="Projects-projects mb-10 flex flex-row flex-wrap justify-evenly">
             {data
               .slice(
                 this.state.projectsDisplayed,
@@ -114,17 +114,16 @@ export default class Projects extends Component<GlobalState, MyState> {
     return (
       <section
         id="projects"
-        className="Projects min-h-screen h-full flex bg-black text-white"
+        className="Projects min-h-screen h-full flex flex-col bg-black text-white"
       >
         <div className="container flex flex-col py-8 relative">
           <Title content="Projects" colorType="white" />
 
-          <div className="Projects-projects my-10 flex flex-row flex-wrap justify-evenly">
+          <div className="Projects-projects mb-10 flex flex-row flex-wrap justify-evenly">
             {data.slice(0, this.state.projectsDisplayed).map((project, i) => (
               <ProjectTile key={i} {...project} shorten={false} />
             ))}
           </div>
-
           {readMore}
         </div>
       </section>

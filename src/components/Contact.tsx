@@ -122,7 +122,7 @@ export default class Contact extends Component<any, any> {
               </div>
               <Animation
                 delay={200}
-                name="zoom-out-up"
+                name="zoom-out-down"
                 className="flex items-center"
               >
                 <ContactSvg className="hidden md:block  max-w-15 lg:max-w-25" />
@@ -144,7 +144,7 @@ export default class Contact extends Component<any, any> {
                   </Link>
                 </div>
               </Animation>
-              <Animation delay={50} name="fade-left">
+              <Animation delay={50} name="fade-right">
                 <div className={`mt-10 ${nameFieldInfoStyle}`}>
                   <label className="block mb-2" htmlFor="name">
                     Name
@@ -160,7 +160,7 @@ export default class Contact extends Component<any, any> {
                   />
                 </div>
               </Animation>
-              <Animation delay={150} name="fade-left">
+              <Animation delay={150} name="fade-right">
                 <div className={`mt-10 ${emailFieldInfoStyle}`}>
                   <label className="block mb-2" htmlFor="email">
                     Email
@@ -176,7 +176,7 @@ export default class Contact extends Component<any, any> {
                   />
                 </div>
               </Animation>
-              <Animation delay={250} name="fade-left">
+              <Animation delay={250} name="fade-right">
                 <div className={`mt-10 ${messageFieldInfoStyle}`}>
                   <label className="block mb-2" htmlFor="message">
                     Message
@@ -192,7 +192,7 @@ export default class Contact extends Component<any, any> {
                   ></textarea>
                 </div>
               </Animation>
-              <Animation delay={350} name="fade-left">
+              <Animation delay={350} name="fade-right">
                 <div className="mt-10 flex items-center justify-center">
                   <button
                     className="w-full p-2 rounded-md outline outline-white hover:bg-white hover:text-black hover:shadow-xl transition duration-200 ease-in-out"

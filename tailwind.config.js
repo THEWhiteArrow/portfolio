@@ -37,7 +37,11 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      scale:{
+        '115': '1.15'
+      }
+    },
     minWidth: dimenstions,
     maxWidth: dimenstions,
     minHeight: dimenstions,

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Animation from "./Animation";
 
 type Props = {
@@ -18,16 +19,24 @@ export default function SkillItem(props: Props) {
     "fade-down-left",
   ];
   const rAnimation = animations[Math.floor(Math.random() * animations.length)];
+  const rRotate = Math.random() > 0.5 ? "hover:rotate-6" : "hover:-rotate-6";
+
   return (
     <div className="SkillItem mt-20 h-20 w-20  lg:mt-32 lg:h-32 lg:w-32 flex flex-col justify-center items-center hover:animation-pause">
       <div className="relative h-full flex justify-center">
-        <Animation name={rAnimation} className="flex">
-          <img
-            className="w-full h-full max-h-4 md:max-h-5"
-            src={url}
-            alt={"skill " + props.name}
-          />
-        </Animation>
+        <Link
+          aria-label={`See ${props.name} skill`}
+          to={`/skill/${props.name}`}
+          className={`w-full h-full hover:scale-115 ${rRotate} duration-100`}
+        >
+          <Animation name={rAnimation} className="flex">
+            <img
+              className="w-full h-full max-h-4 md:max-h-5"
+              src={url}
+              alt={"skill " + props.name}
+            />
+          </Animation>
+        </Link>
       </div>
 
       <Animation

@@ -49,7 +49,9 @@ export default class CustomLink extends Component<MyProps> {
         className={`${this.props.className} relative custom-link cursor-pointer `}
       >
         {elipse}
-        <Link to={this.props.to}>{this.props.children}</Link>
+        <Link to={this.props.to} className="h-full">
+          {this.props.children}
+        </Link>
       </div>
     );
   }
