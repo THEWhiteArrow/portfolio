@@ -64,8 +64,8 @@ export default class Contact extends Component<any, any> {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: this.encode({ "form-name": "contact", name, email, message }),
     })
-      .then(() => Navigate({ to: "/thank-you/", replace: true }))
-      .catch((error) => Navigate({ to: "/uups/", replace: true }));
+      .then(() => console.log("Submitted succcessfully"))
+      .catch((error) => console.log("Failed to submit :("));
   };
 
   handleChangeCupture = (e: any) => {
