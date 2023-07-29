@@ -25,7 +25,7 @@ export default class Contact extends Component<any, any> {
     };
   }
 
-  required = (value: string) => new RegExp("^[\\w ]+$").test(value.trim());
+  required = (value: string) => new RegExp(".+", "m").test(value.trim());
   email = (value: string) =>
     new RegExp("^\\w(\\w*|\\.[^.]+)*@[\\w]+\\.[a-zA-Z]{2,}$").test(value);
 
