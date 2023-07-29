@@ -10,7 +10,7 @@ import { ReactComponent as InstagramSvg } from "../assets/svg/instagram.svg";
 import { Link } from "react-router-dom";
 
 import Animation from "./Animation";
-// import { Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 export default class Contact extends Component<any, any> {
   constructor(props: any) {
@@ -49,23 +49,24 @@ export default class Contact extends Component<any, any> {
     }
   };
 
-  // encode = (data: any) => {
-  //   return Object.keys(data)
-  //     .map(
-  //       (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-  //     )
-  //     .join("&");
-  // };
-  // sendForm = () => {
-  //   const { name, email, message } = this.state;
-  //   fetch("/", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-  //     body: this.encode({ "form-name": "contact", name, email, message }),
-  //   })
-  //     .then(() => Navigate({ to: "/thank-you/", replace: true }))
-  //     .catch((error) => Navigate({ to: "/uups/", replace: true }));
-  // };
+  encode = (data: any) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+  };
+  sendForm = () => {
+    console.log("Sending the form...");
+    const { name, email, message } = this.state;
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: this.encode({ "form-name": "contact", name, email, message }),
+    })
+      .then(() => Navigate({ to: "/thank-you/", replace: true }))
+      .catch((error) => Navigate({ to: "/uups/", replace: true }));
+  };
 
   handleChangeCupture = (e: any) => {
     this.setState(
