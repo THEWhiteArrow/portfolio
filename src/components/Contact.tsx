@@ -160,6 +160,7 @@ export default class Contact extends Component<any, any> {
               // onSubmitCapture={this.handleSubmit}
               className="py-10 shadow-md rounded grow flex flex-col justify-center md:pl-10"
             >
+              <input type="hidden" name="form-name" value="contact" />
               <Animation name="zoom-out-left">
                 <div>
                   <p>Or email me directly on </p>
