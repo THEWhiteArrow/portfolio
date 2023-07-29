@@ -30,7 +30,6 @@ export default class Contact extends Component<any, any> {
     new RegExp("^\\w(\\w*|\\.[^.]+)*@[\\w]+\\.[a-zA-Z]{2,}$").test(value);
 
   handleSubmit = (e: any) => {
-    e.preventDefault();
     this.setState({ isValidating: true });
     const { name, email, message } = this.state;
 
@@ -45,6 +44,7 @@ export default class Contact extends Component<any, any> {
       console.log("success");
     } else {
       console.log("fail");
+      e.preventDefault();
     }
   };
 
@@ -154,6 +154,9 @@ export default class Contact extends Component<any, any> {
             </div>
 
             <form
+              name="contact"
+              method="POST"
+              data-netlify={true}
               onSubmitCapture={this.handleSubmit}
               className="py-10 shadow-md rounded grow flex flex-col justify-center md:pl-10"
             >
@@ -174,6 +177,7 @@ export default class Contact extends Component<any, any> {
                     Name
                   </label>
                   <input
+                    formNoValidate={true}
                     value={this.state.name}
                     onChangeCapture={this.handleChangeCupture}
                     className="appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-white focus:shadow-outline"
@@ -190,6 +194,7 @@ export default class Contact extends Component<any, any> {
                     Email
                   </label>
                   <input
+                    formNoValidate={true}
                     value={this.state.email}
                     onChangeCapture={this.handleChangeCupture}
                     className="appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-white focus:shadow-outline"
