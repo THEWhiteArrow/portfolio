@@ -42,31 +42,31 @@ export default class Projects extends Component<GlobalState, MyState> {
     let width = this.props.windowWidth;
     if (width < 500)
       this.setState((st) => {
-        if (st.projectsInLine != 1) {
+        if (st.projectsInLine !== 1) {
           return { projectsInLine: 1, projectsDisplayed: 1 };
         }
       });
     else if (width < 768)
       this.setState((st) => {
-        if (st.projectsInLine != 1) {
+        if (st.projectsInLine !== 1) {
           return { projectsInLine: 1, projectsDisplayed: 1 };
         }
       });
     else if (width < 1024)
       this.setState((st) => {
-        if (st.projectsInLine != 1) {
+        if (st.projectsInLine !== 1) {
           return { projectsInLine: 1, projectsDisplayed: 1 };
         }
       });
     else if (width < 1280)
       this.setState((st) => {
-        if (st.projectsInLine != 2) {
+        if (st.projectsInLine !== 2) {
           return { projectsInLine: 2, projectsDisplayed: 2 };
         }
       });
     else if (width < 1536)
       this.setState((st) => {
-        if (st.projectsInLine != 3) {
+        if (st.projectsInLine !== 3) {
           return { projectsInLine: 3, projectsDisplayed: 3 };
         }
       });
@@ -88,7 +88,7 @@ export default class Projects extends Component<GlobalState, MyState> {
           </div>
 
           <div className="absolute w-full h-full top-0 left-0 fadeLikeMedium flex justify-center text-xl">
-            {this.state.projectsDisplayed != this.state.projectsInLine && (
+            {this.state.projectsDisplayed !== this.state.projectsInLine && (
               <CustomLink
                 to=""
                 className="mt-auto mb-3 mx-2 animate-none w-fit p-4 stroke-white self-center"
