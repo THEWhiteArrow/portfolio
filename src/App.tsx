@@ -4,6 +4,7 @@ import MainPage from "./components/MainPage";
 import Cursor from "./components/Cursor";
 import { Routes, Route } from "react-router-dom";
 import MaintanancePage from "./components/MaintanancePage";
+import ThankYouPage from "./components/ThankYouPage";
 type GlobalState = {
   windowWidth: number;
 };
@@ -24,6 +25,7 @@ function App() {
       <Cursor />
       <Routes>
         <Route path="/" element={<MainPage windowWidth={windowWidth} />} />
+        <Route path="/thank-you" element={<ThankYouPage />} />
         <Route path="/project/:projectId" element={<MaintanancePage />} />
         <Route path="/skill/:skillId" element={<MaintanancePage />} />
       </Routes>

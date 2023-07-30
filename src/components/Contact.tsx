@@ -8,6 +8,7 @@ import { ReactComponent as GithubSvg } from "../assets/svg/github.svg";
 import { ReactComponent as LinkedinSvg } from "../assets/svg/linkedin.svg";
 import { ReactComponent as InstagramSvg } from "../assets/svg/instagram.svg";
 import { Link } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 import Animation from "./Animation";
 
@@ -28,6 +29,7 @@ export default class Contact extends Component<any, any> {
       emailValid: false,
       messageValid: false,
       isValidating: false,
+      formSent: false,
     };
   }
 
@@ -59,7 +61,7 @@ export default class Contact extends Component<any, any> {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", ...this.state }),
     })
-      .then(() => alert("Success!"))
+      .then(() => this.setState({ formSent: true }))
       .catch((error) => alert(error));
   };
 
@@ -172,7 +174,7 @@ export default class Contact extends Component<any, any> {
               onSubmit={this.handleSubmit}
               className="py-10 shadow-md rounded grow flex flex-col justify-center md:pl-10"
             >
-              {/* <input type="hidden" name="form-name" value="contact" /> */}
+              {this.state.formSent && <Navigate to="/thank-you" />}
               <Animation name="zoom-out-left">
                 <div>
                   <p>Or email me directly on </p>

@@ -2,6 +2,8 @@ import { Component, ReactNode } from "react";
 import Title from "./Title";
 import CustomLink from "./CustomLink";
 import { Helmet } from "react-helmet";
+import "../styles/MaintenancePage.css";
+import { ReactComponent as GearSvg } from "../assets/svg/gear.svg";
 
 export default class ProjectPage extends Component {
   render(): ReactNode {
@@ -25,7 +27,10 @@ export default class ProjectPage extends Component {
               <p className="text-center">
                 Your intrest in my story is amazing...
               </p>
-              <p className="text-center">
+
+              <GearSvg />
+
+              <p className="mt-5 text-center">
                 ...However, I am still working on creating this section
               </p>
               <p className="text-center"> Stay tuned for the great launch!</p>
