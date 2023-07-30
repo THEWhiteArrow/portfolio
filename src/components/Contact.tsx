@@ -175,14 +175,11 @@ export default class Contact extends Component<any, any> {
               className="py-10 shadow-md rounded grow flex flex-col justify-center md:pl-10"
             >
               {this.state.formSent && <Navigate to="/thank-you" />}
-              <Animation name="zoom-out-left">
+              <Animation name="zoom-out-right">
                 <div>
                   <p>Or email me directly on </p>
-                  <Link
-                    to="mailto:damian.trafialek@gmail.com"
-                    className="underline"
-                  >
-                    damian.trafialek@gmail.com
+                  <Link to="mailto:damian@trafialek.com" className="underline">
+                    damian@trafialek.com
                   </Link>
                 </div>
               </Animation>
