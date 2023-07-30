@@ -36,7 +36,7 @@ const data: ProjectDataType[] = [
         shortDescription:`Advanced tool enhancing CS:GO experience by providing valuable insights into trading. 
         Predicting profitable trades based on skin prices. 
         Though not online due to hosting costs, it taught valuable lessons in data structures, algorithms, and node.js development.`,
-        imgName:'holder.png',
+        imgName:'tradeupfinder.png',
         imgAlt:'tradeup-finder',
         id:'tradeup-finder',
         shadowColor: 'rgb(100,200,10)'
