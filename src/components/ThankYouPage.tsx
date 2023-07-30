@@ -2,6 +2,7 @@ import { Component } from "react";
 import { Helmet } from "react-helmet";
 import Title from "./Title";
 import CustomLink from "./CustomLink";
+import { ReactComponent as FileSvg } from "../assets/svg/file.svg";
 import "../styles/ThankYouPage.css";
 
 export default class ThankYouPage extends Component {
@@ -19,17 +20,17 @@ export default class ThankYouPage extends Component {
                 Your form has been successfully submitted!
               </p>
 
-              <div className="loader-container">
+              <div className="loader-container scale-50">
                 <span></span>
                 <div className="center">
                   <div className="wrap">
                     <div className="box-1 box">
-                      <div className="svg"></div>
-                      <div className="svg"></div>
+                      <FileSvg className="scale-50" />
+                      <FileSvg className="scale-50" />
                     </div>
                     <div className="box-2 box">
-                      <div className="svg"></div>
-                      <div className="svg"></div>
+                      <FileSvg className="scale-50" />
+                      <FileSvg className="scale-50" />
                     </div>
                   </div>
                 </div>
