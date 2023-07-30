@@ -11,6 +11,7 @@ type MyProps = {
   to: string;
   className?: string;
   children?: any;
+  variant?: "white" | "black";
   onClick?:
     | undefined
     | ((event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void);
@@ -46,7 +47,7 @@ export default class CustomLink extends Component<MyProps> {
     return (
       <div
         onClick={this.props.onClick}
-        className={`${this.props.className} relative custom-link cursor-pointer `}
+        className={`${this.props.className} ${this.props.variant} relative custom-link cursor-pointer `}
       >
         {elipse}
         <Link to={this.props.to} className="h-full">

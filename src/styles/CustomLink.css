@@ -7,7 +7,8 @@
     transition: stroke-dasharray ease-in-out .3s, stroke-dashoffset ease-in-out .3s;
 }
 
-.custom-link.stroke-white path {
+.custom-link.stroke-white path,
+.custom-link.white path {
     stroke: white;
 }
 
