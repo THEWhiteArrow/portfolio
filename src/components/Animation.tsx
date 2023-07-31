@@ -9,6 +9,7 @@ type MyProps = {
   delay?: number;
   children: React.ReactNode;
   className?: string;
+  once?: boolean;
 };
 export default class Animation extends Component<MyProps> {
   constructor(props: MyProps) {
@@ -19,12 +20,13 @@ export default class Animation extends Component<MyProps> {
     Aos.refresh();
   }
   render() {
-    const { name, delay, anchor, className } = this.props;
+    const { name, delay, anchor, className,once } = this.props;
     return (
       <span
         data-aos={name}
         data-aos-delay={delay}
         data-aos-anchor-placement={anchor}
+        data-aos-once={once}
         className={`w-full h-full ${className}`}
       >
         {this.props.children}

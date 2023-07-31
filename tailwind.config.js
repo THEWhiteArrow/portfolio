@@ -38,8 +38,11 @@ module.exports = {
   ],
   theme: {
     extend: {
-      scale:{
+      scale: {
         '115': '1.15'
+      },
+      fontSize: {
+        '85': '85px',
       }
     },
     minWidth: dimenstions,

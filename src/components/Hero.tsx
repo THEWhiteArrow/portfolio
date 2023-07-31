@@ -14,7 +14,7 @@ export default class Hero extends Component {
         <div className="h-full  container grow flex flex-col md:flex-row py-8 relative">
           <div className="h-full text-2xl lg:w-7/12 flex flex-col justify-center content-center">
             <Animation name="slide-down" delay={75}>
-              <h1 className="text-8xl">
+              <h1 className="text-7xl lg:text-85">
                 <span className="animate">Hello</span>
                 <span className="animate">, </span>
                 <br />
@@ -37,42 +37,42 @@ export default class Hero extends Component {
               </p>
             </Animation>
 
-            <div className="mt-10 mb-5 flex flex-col sm:flex-row justify-between lg:pr-20 text-center">
-              <Animation name="fade-up" delay={100}>
+            <div className="mt-10 mb-6 flex flex-col items-center gap-5  justify-center sm:flex-wrap sm:flex-row lg:pr-20 text-center">
+              <Animation once={true} className="flex w-min" name="fade-up" delay={100}>
                 <CustomLink
-                  className="p-4 mt-4 lg:mt-0 animation-delay-1"
+                  className="p-4 animation-delay-1"
                   to="/#about"
                 >
                   About
                 </CustomLink>
               </Animation>
-              <Animation name="fade-up" delay={200}>
+              <Animation once={true} className="flex w-min" name="fade-up" delay={200}>
                 <CustomLink
-                  className="p-4 mt-4 lg:mt-0 animation-delay-2"
+                  className="p-4 animation-delay-2"
                   to="/#projects"
                 >
                   Projects
                 </CustomLink>
               </Animation>
-              <Animation name="fade-up" delay={300}>
+              <Animation once={true} className="flex w-min" name="fade-up" delay={300}>
                 <CustomLink
-                  className="p-4 mt-4 lg:mt-0 animation-delay-3"
+                  className="p-4 animation-delay-3"
                   to="/#skills"
                 >
                   Skills
                 </CustomLink>
               </Animation>
-              <Animation name="fade-up" delay={400}>
+              <Animation once={true} className="flex w-min" name="fade-up" delay={400}>
                 <CustomLink
-                  className="p-4 mt-4 lg:mt-0 animation-delay-4"
+                  className="p-4 animation-delay-4"
                   to="/#vision"
                 >
                   Vision
                 </CustomLink>
               </Animation>
-              <Animation name="fade-up" delay={500}>
+              <Animation once={true} className="flex w-min" name="fade-up" delay={500}>
                 <CustomLink
-                  className="p-4 mt-4 lg:mt-0 animation-delay-5"
+                  className="p-4 animation-delay-5"
                   to="/#contact"
                 >
                   Contact
