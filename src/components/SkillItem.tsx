@@ -35,7 +35,7 @@ export default function SkillItem(props: Props) {
             <img
               className="w-full h-full max-h-4 md:max-h-5"
               src={svg}
-              alt={"skill " + props.name}
+              alt={`one of my skills is ${props.name}`}
             />
           </Animation>
         </Link>

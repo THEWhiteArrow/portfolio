@@ -146,11 +146,13 @@ table {
 @font-face {
     font-family: "Inconsolata";
     src: url("../assets/fonts/Inconsolata-Regular.ttf") format("truetype");
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Poppins";
     src: url("../assets/fonts/Poppins-Regular.ttf") format("truetype");
+    font-display: swap;
 }
 
 
