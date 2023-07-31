@@ -12,7 +12,7 @@ export default class Hero extends Component {
         className="Hero min-h-screen h-full flex items-center "
       >
         <div className="h-full  container grow flex flex-col md:flex-row py-8 relative">
-          <div className="h-full text-2xl lg:w-7/12 flex flex-col justify-center content-center">
+          <div className="h-full text-2xl lg:w-7/10 flex flex-col justify-center content-center">
             <Animation name="slide-down" delay={75}>
               <h1 className="text-7xl lg:text-85">
                 <span className="animate">Hello</span>
@@ -37,8 +37,8 @@ export default class Hero extends Component {
               </p>
             </Animation>
 
-            <div className="mt-10 mb-6 flex flex-col items-center gap-5  justify-center sm:flex-wrap sm:flex-row lg:pr-20 text-center">
-              <Animation once={true} className="flex w-min" name="fade-up" delay={100}>
+            <nav id="navContainer" className="mt-10 mb-6 flex flex-col items-center gap-5  justify-center sm:flex-wrap sm:flex-row lg:pr-20 text-center">
+              <Animation anchor="#navContainer" className="flex w-min" name="fade-up" delay={100}>
                 <CustomLink
                   className="p-4 animation-delay-1"
                   to="/#about"
@@ -46,7 +46,7 @@ export default class Hero extends Component {
                   About
                 </CustomLink>
               </Animation>
-              <Animation once={true} className="flex w-min" name="fade-up" delay={200}>
+              <Animation anchor="#navContainer" className="flex w-min" name="fade-up" delay={200}>
                 <CustomLink
                   className="p-4 animation-delay-2"
                   to="/#projects"
@@ -54,7 +54,7 @@ export default class Hero extends Component {
                   Projects
                 </CustomLink>
               </Animation>
-              <Animation once={true} className="flex w-min" name="fade-up" delay={300}>
+              <Animation anchor="#navContainer" className="flex w-min" name="fade-up" delay={300}>
                 <CustomLink
                   className="p-4 animation-delay-3"
                   to="/#skills"
@@ -62,7 +62,7 @@ export default class Hero extends Component {
                   Skills
                 </CustomLink>
               </Animation>
-              <Animation once={true} className="flex w-min" name="fade-up" delay={400}>
+              <Animation anchor="#navContainer" className="flex w-min" name="fade-up" delay={400}>
                 <CustomLink
                   className="p-4 animation-delay-4"
                   to="/#vision"
@@ -70,7 +70,7 @@ export default class Hero extends Component {
                   Vision
                 </CustomLink>
               </Animation>
-              <Animation once={true} className="flex w-min" name="fade-up" delay={500}>
+              <Animation anchor="#navContainer" className="flex w-min" name="fade-up" delay={500}>
                 <CustomLink
                   className="p-4 animation-delay-5"
                   to="/#contact"
@@ -78,10 +78,10 @@ export default class Hero extends Component {
                   Contact
                 </CustomLink>
               </Animation>
-            </div>
+            </nav>
           </div>
 
-          <div className="w-full h-full hidden lg:block lg:w-5/12 self-center justify-self-center">
+          <div className="w-full h-full hidden lg:block lg:w-3/10 self-center justify-self-center">
             <Animation name="fade" delay={50}>
               <FaceSvg width="100%" className="animateFace" />
             </Animation>

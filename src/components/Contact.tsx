@@ -218,7 +218,7 @@ export default class Contact extends Component<any, any> {
                 </div>
               </Animation>
               <Animation delay={250} name="fade-right">
-                <div className={`mt-10 ${messageFieldInfoStyle}`}>
+                <div id="messageField" className={`mt-10 ${messageFieldInfoStyle}`}>
                   <label className="block mb-2" htmlFor="message">
                     Message
                   </label>
@@ -233,7 +233,7 @@ export default class Contact extends Component<any, any> {
                   ></textarea>
                 </div>
               </Animation>
-              <Animation once={true} delay={350} name="fade-right">
+              <Animation anchor="#messageField" delay={350} name="fade-right">
                 <div className="mt-10 flex items-center justify-center">
                   <button
                     className="w-full p-2 rounded-md outline outline-white hover:bg-white hover:text-black hover:shadow-xl transition duration-200 ease-in-out"

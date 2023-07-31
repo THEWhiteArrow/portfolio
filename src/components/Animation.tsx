@@ -25,7 +25,7 @@ export default class Animation extends Component<MyProps> {
       <span
         data-aos={name}
         data-aos-delay={delay}
-        data-aos-anchor-placement={anchor}
+        data-aos-anchor={anchor}
         data-aos-once={once}
         className={`w-full h-full ${className}`}
       >
