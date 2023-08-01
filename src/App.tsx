@@ -1,12 +1,13 @@
-import { useEffect, useState } from "react";
-
 import MainPage from "./components/MainPage";
 import Cursor from "./components/Cursor";
-import { Routes, Route } from "react-router-dom";
 import MaintanancePage from "./components/MaintanancePage";
 import ThankYouPage from "./components/ThankYouPage";
 import NotFound from "./components/NotFound";
+import { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import { Navigate } from "react-router-dom";
+import { BrowserView } from "react-device-detect";
+
 type GlobalState = {
   windowWidth: number;
 };
@@ -24,7 +25,9 @@ function App() {
 
   return (
     <div className="App text-black">
-      <Cursor />
+      <BrowserView>
+        <Cursor />
+      </BrowserView>
       <Routes>
         <Route path="/" element={<MainPage windowWidth={windowWidth} />} />
         <Route path="/thank-you" element={<ThankYouPage />} />

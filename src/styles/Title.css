@@ -1,17 +1,10 @@
-.Title {
-    font-size: 100px;
-
-}
-
-.Title-white {
-    font-size: 100px;
+.Title-white { 
     color: transparent;
     -webkit-text-stroke-color: #ffffffdd;
     -webkit-text-stroke-width: 2px;
 }
 
-.Title-black {
-    font-size: 100px;
+.Title-black { 
     color: transparent;
     -webkit-text-stroke-color: #000000d5;
     -webkit-text-stroke-width: 2px;

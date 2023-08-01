@@ -20,7 +20,9 @@ export default class Title extends Component<MyProps> {
     const { content, colorType, className, animation } = this.props;
     console.log(animation);
     const h2 = (
-      <h2 className={`Title Title-${colorType} ${className}`}>
+      <h2
+        className={`Title Title-${colorType} ${className} text-5xl sm:text-6xl md:text-85`}
+      >
         {content.split("").map((letter, i) => (
           <span key={i} className={`Title-letter Title-letter-${colorType}`}>
             {letter}

@@ -162,7 +162,7 @@ body,
 .App {
     width: 100%;
     scroll-behavior: smooth !important;
-
+    overflow-x: hidden !important;
     font-family: 'Inconsolata', monospace;
 }
 
@@ -174,9 +174,7 @@ h5 {
     font-family: 'Poppins', sans-serif;
 }
 
-body {
-    overflow-x: hidden;
-}
+ 
 
 .min-h-screen {
     min-height: 100vh;
@@ -189,3 +187,5 @@ body {
 .h-full {
     height: 100%;
 }
+
+ 
