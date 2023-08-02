@@ -5,7 +5,9 @@ import "../styles/MaintenancePage.css";
 import { ReactComponent as GearSvg } from "../assets/svg/gear.svg";
 import { useNavigate } from "react-router-dom";
 
-export default function ProjectPage() {
+type MyProps = { navigateBack: boolean };
+
+export default function ProjectPage(props: MyProps) {
   const nav = useNavigate();
   return (
     <>
@@ -39,7 +41,8 @@ export default function ProjectPage() {
             to="/"
             className="my-10 flex items-center"
             onClick={() => {
-              nav(-1);
+              if (props.navigateBack) nav(-1);
+              else nav("/");
             }}
             type="button"
             elClassName="p-8 px-10"

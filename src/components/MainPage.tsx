@@ -9,9 +9,15 @@ import { GlobalState } from "../App";
 
 import Aos from "aos";
 import { Helmet } from "react-helmet";
-class MainPage extends Component<GlobalState> {
+
+type MyProps = GlobalState & {
+  setNavigateBack: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+class MainPage extends Component<MyProps> {
   componentDidMount(): void {
     Aos.init();
+    this.props.setNavigateBack(true);
   }
   render() {
     return (

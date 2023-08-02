@@ -16,6 +16,7 @@ type GlobalState = {
 function App() {
   let [windowWidth, setWindowWidth] = useState(window.innerWidth);
   let [projectsDisplayed, setProjectsDisplayed] = useState(3);
+  let [navigateBack, setNavigateBack] = useState(false);
 
   useEffect(() => {
     const onResize = () => {
@@ -36,6 +37,7 @@ function App() {
             index
             element={
               <MainPage
+                setNavigateBack={setNavigateBack}
                 windowWidth={windowWidth}
                 projectsDisplayed={projectsDisplayed}
                 setProjectsDisplayed={setProjectsDisplayed}
@@ -43,11 +45,17 @@ function App() {
             }
           />
           <Route path="thank-you" element={<ThankYouPage />} />
-          <Route path="project" element={<MaintanancePage />}>
+          <Route
+            path="project"
+            element={<MaintanancePage navigateBack={navigateBack} />}
+          >
             <Route index />
             <Route path=":projectId" />
           </Route>
-          <Route path="skill" element={<MaintanancePage />}>
+          <Route
+            path="skill"
+            element={<MaintanancePage navigateBack={navigateBack} />}
+          >
             <Route index />
             <Route path=":skillId" />
           </Route>
