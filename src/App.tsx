@@ -8,20 +8,31 @@ import { Routes, Route } from "react-router-dom";
 import { BrowserView } from "react-device-detect";
 
 type GlobalState = {
-  windowWidth: number;
+  projects: { inLine: number; displayed: number };
+  manageProjects: Function;
 };
 
 function App() {
-  let [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  let [projects, setProjects] = useState({ inLine: 3, displayed: 3 });
 
   useEffect(() => {
     const onResize = () => {
-      setWindowWidth(window.innerWidth);
-      console.log(windowWidth);
+      const width = window.innerWidth;
+      const { inLine, displayed } = projects;
+      if (width < 1024) {
+        if (inLine !== 1) setProjects({ inLine: 1, displayed });
+      } else if (width < 1280) {
+        if (inLine !== 2) setProjects({ inLine: 2, displayed });
+      } else if (width < 1536) {
+        if (inLine !== 3) setProjects({ inLine: 3, displayed });
+      }
     };
     window.addEventListener("resize", onResize);
-  }, [windowWidth]);
-
+  }, [projects]);
+  const manageProjects = (change: number) => {
+    const { inLine, displayed } = projects;
+    setProjects({ inLine, displayed: displayed + change * inLine });
+  };
   return (
     <div className="App text-black">
       <BrowserView>
@@ -29,13 +40,21 @@ function App() {
       </BrowserView>
       <Routes>
         <Route path="/">
-          <Route index element={<MainPage windowWidth={windowWidth} />} />
+          <Route
+            index
+            element={
+              <MainPage projects={projects} manageProjects={manageProjects} />
+            }
+          />
           <Route path="thank-you" element={<ThankYouPage />} />
-          <Route path="project" element={<MaintanancePage />}>
+          <Route
+            path="project"
+            element={<MaintanancePage backTo="/#projects" />}
+          >
             <Route index />
             <Route path=":projectId" />
           </Route>
-          <Route path="skill" element={<MaintanancePage />}>
+          <Route path="skill" element={<MaintanancePage backTo="/#skills" />}>
             <Route index />
             <Route path=":skillId" />
           </Route>

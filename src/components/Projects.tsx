@@ -13,93 +13,43 @@ type MyState = {
 };
 
 export default class Projects extends Component<GlobalState, MyState> {
-  constructor(props: GlobalState) {
-    super(props);
-    this.state = {
-      projectsInLine: 3,
-      projectsDisplayed: 3,
-    };
-  }
-
   handleClickMore = (e: any) => {
     e.preventDefault();
-    e.stopPropagation();
-    this.setState({
-      projectsDisplayed:
-        this.state.projectsDisplayed + this.state.projectsInLine,
-    });
+    this.props.manageProjects(1);
   };
   handleClickLess = (e: any) => {
     e.preventDefault();
-    e.stopPropagation();
-    this.setState({
-      projectsDisplayed:
-        this.state.projectsDisplayed - this.state.projectsInLine,
-    });
+    this.props.manageProjects(-1);
   };
 
   render() {
-    let width = this.props.windowWidth;
-    if (width < 500)
-      this.setState((st) => {
-        if (st.projectsInLine !== 1) {
-          return { projectsInLine: 1, projectsDisplayed: 1 };
-        }
-      });
-    else if (width < 768)
-      this.setState((st) => {
-        if (st.projectsInLine !== 1) {
-          return { projectsInLine: 1, projectsDisplayed: 1 };
-        }
-      });
-    else if (width < 1024)
-      this.setState((st) => {
-        if (st.projectsInLine !== 1) {
-          return { projectsInLine: 1, projectsDisplayed: 1 };
-        }
-      });
-    else if (width < 1280)
-      this.setState((st) => {
-        if (st.projectsInLine !== 2) {
-          return { projectsInLine: 2, projectsDisplayed: 2 };
-        }
-      });
-    else if (width < 1536)
-      this.setState((st) => {
-        if (st.projectsInLine !== 3) {
-          return { projectsInLine: 3, projectsDisplayed: 3 };
-        }
-      });
-
+    const { inLine, displayed } = this.props.projects;
     let readMore = null;
 
-    if (this.state.projectsDisplayed < data.length || true) {
+    if (displayed < data.length || true) {
       readMore = (
         <div className="relative">
           <div className="Projects-projects mb-10 flex flex-row flex-wrap justify-evenly">
-            {data
-              .slice(
-                this.state.projectsDisplayed,
-                this.state.projectsDisplayed + this.state.projectsInLine
-              )
-              .map((project, i) => (
-                <ProjectTile key={i} {...project} shorten={true} />
-              ))}
+            {data.slice(displayed, displayed + inLine).map((project, i) => (
+              <ProjectTile key={i} {...project} shorten={true} />
+            ))}
           </div>
 
           <div className="absolute w-full h-full top-0 left-0 fadeLikeMedium flex justify-center text-xl">
-            {this.state.projectsDisplayed !== this.state.projectsInLine && (
+            {displayed !== inLine && (
               <CustomLink
                 to=""
+                type="button"
                 className="mt-auto mb-3 mx-2 animate-none w-fit p-4 stroke-white self-center"
                 onClick={this.handleClickLess}
               >
                 See less
               </CustomLink>
             )}
-            {this.state.projectsDisplayed < data.length && (
+            {displayed < data.length && (
               <CustomLink
                 to=""
+                type="button"
                 className="mt-auto mb-3 mx-2 animate-none w-fit p-4 stroke-white self-center"
                 onClick={this.handleClickMore}
               >
@@ -120,7 +70,7 @@ export default class Projects extends Component<GlobalState, MyState> {
           <Title content="Projects" colorType="white" />
 
           <div className="Projects-projects mb-10 flex flex-row flex-wrap justify-evenly">
-            {data.slice(0, this.state.projectsDisplayed).map((project, i) => (
+            {data.slice(0, displayed).map((project, i) => (
               <ProjectTile key={i} {...project} shorten={false} />
             ))}
           </div>
