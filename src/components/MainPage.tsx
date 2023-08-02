@@ -28,7 +28,11 @@ class MainPage extends Component<GlobalState> {
           />
         </Helmet>
         <Hero />
-        <Projects windowWidth={this.props.windowWidth} />
+        <Projects
+          windowWidth={this.props.windowWidth}
+          projectsDisplayed={this.props.projectsDisplayed}
+          setProjectsDisplayed={this.props.setProjectsDisplayed}
+        />
         <About />
         <Skills />
         <Vision />

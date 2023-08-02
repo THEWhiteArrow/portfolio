@@ -6,14 +6,16 @@ import NotFound from "./components/NotFound";
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { BrowserView } from "react-device-detect";
-import { on } from "events";
 
 type GlobalState = {
   windowWidth: number;
+  projectsDisplayed: number;
+  setProjectsDisplayed: React.Dispatch<React.SetStateAction<number>>;
 };
 
 function App() {
   let [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  let [projectsDisplayed, setProjectsDisplayed] = useState(3);
 
   useEffect(() => {
     const onResize = () => {
@@ -30,7 +32,16 @@ function App() {
       </BrowserView>
       <Routes>
         <Route path="/">
-          <Route index element={<MainPage windowWidth={windowWidth} />} />
+          <Route
+            index
+            element={
+              <MainPage
+                windowWidth={windowWidth}
+                projectsDisplayed={projectsDisplayed}
+                setProjectsDisplayed={setProjectsDisplayed}
+              />
+            }
+          />
           <Route path="thank-you" element={<ThankYouPage />} />
           <Route path="project" element={<MaintanancePage />}>
             <Route index />
