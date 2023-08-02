@@ -6,6 +6,7 @@ import NotFound from "./components/NotFound";
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { BrowserView } from "react-device-detect";
+import { on } from "events";
 
 type GlobalState = {
   projects: { inLine: number; displayed: number };
@@ -28,6 +29,7 @@ function App() {
       }
     };
     window.addEventListener("resize", onResize);
+    onResize();
   }, [projects]);
   const manageProjects = (change: number) => {
     const { inLine, displayed } = projects;
