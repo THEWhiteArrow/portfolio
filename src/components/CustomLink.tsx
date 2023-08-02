@@ -15,12 +15,16 @@ type MyProps = {
   onClick?:
     | undefined
     | ((event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void);
+  type?: "link" | "button";
+  elClassName?: string;
 };
 
 export default class CustomLink extends Component<MyProps> {
   render() {
     const r = Math.floor(Math.random() * 4) + 1;
     let elipse = null;
+    let content = null;
+
     switch (r) {
       case 1:
         elipse = (
@@ -43,16 +47,26 @@ export default class CustomLink extends Component<MyProps> {
         );
         break;
     }
-
+    if (this.props.type === "button") {
+      content = (
+        <button className={`h-full ${this.props.elClassName}`}>
+          {this.props.children}
+        </button>
+      );
+    } else
+      content = (
+        <Link to={this.props.to} className={`h-full ${this.props.elClassName}`}>
+          {this.props.children}
+        </Link>
+      );
     return (
       <div
         onClick={this.props.onClick}
         className={`${this.props.className} ${this.props.variant} relative custom-link cursor-pointer `}
       >
         {elipse}
-        <Link to={this.props.to} className="h-full">
-          {this.props.children}
-        </Link>
+
+        {content}
       </div>
     );
   }

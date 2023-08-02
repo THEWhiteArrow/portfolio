@@ -37,44 +37,57 @@ export default class Hero extends Component {
               </p>
             </Animation>
 
-            <nav id="navContainer" className="mt-10 mb-6 flex flex-col items-center gap-5  justify-center sm:flex-wrap sm:flex-row lg:pr-20 text-center">
-              <Animation anchor="#navContainer" className="flex w-min" name="fade-up" delay={100}>
-                <CustomLink
-                  className="p-4 animation-delay-1"
-                  to="/#about"
-                >
-                  About
-                </CustomLink>
-              </Animation>
-              <Animation anchor="#navContainer" className="flex w-min" name="fade-up" delay={200}>
-                <CustomLink
-                  className="p-4 animation-delay-2"
-                  to="/#projects"
-                >
+            <nav
+              id="navContainer"
+              className="mt-10 mb-6 flex flex-col items-center gap-5  justify-center sm:flex-wrap sm:flex-row lg:pr-20 text-center"
+            >
+              <Animation
+                anchor="#navContainer"
+                className="flex w-min"
+                name="fade-up"
+                delay={200}
+              >
+                <CustomLink className="p-4 animation-delay-2" to="/#projects">
                   Projects
                 </CustomLink>
               </Animation>
-              <Animation anchor="#navContainer" className="flex w-min" name="fade-up" delay={300}>
-                <CustomLink
-                  className="p-4 animation-delay-3"
-                  to="/#skills"
-                >
+              <Animation
+                anchor="#navContainer"
+                className="flex w-min"
+                name="fade-up"
+                delay={100}
+              >
+                <CustomLink className="p-4 animation-delay-1" to="/#about">
+                  About
+                </CustomLink>
+              </Animation>
+              <Animation
+                anchor="#navContainer"
+                className="flex w-min"
+                name="fade-up"
+                delay={300}
+              >
+                <CustomLink className="p-4 animation-delay-3" to="/#skills">
                   Skills
                 </CustomLink>
               </Animation>
-              <Animation anchor="#navContainer" className="flex w-min" name="fade-up" delay={400}>
-                <CustomLink
-                  className="p-4 animation-delay-4"
-                  to="/#vision"
-                >
+              <Animation
+                anchor="#navContainer"
+                className="flex w-min"
+                name="fade-up"
+                delay={400}
+              >
+                <CustomLink className="p-4 animation-delay-4" to="/#vision">
                   Vision
                 </CustomLink>
               </Animation>
-              <Animation anchor="#navContainer" className="flex w-min" name="fade-up" delay={500}>
-                <CustomLink
-                  className="p-4 animation-delay-5"
-                  to="/#contact"
-                >
+              <Animation
+                anchor="#navContainer"
+                className="flex w-min"
+                name="fade-up"
+                delay={500}
+              >
+                <CustomLink className="p-4 animation-delay-5" to="/#contact">
                   Contact
                 </CustomLink>
               </Animation>

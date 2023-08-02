@@ -5,7 +5,6 @@ import ThankYouPage from "./components/ThankYouPage";
 import NotFound from "./components/NotFound";
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import { Navigate } from "react-router-dom";
 import { BrowserView } from "react-device-detect";
 
 type GlobalState = {
@@ -29,14 +28,21 @@ function App() {
         <Cursor />
       </BrowserView>
       <Routes>
-        <Route path="/" element={<MainPage windowWidth={windowWidth} />} />
-        <Route path="/thank-you" element={<ThankYouPage />} />
-        <Route path="/project/:projectId" element={<MaintanancePage />} />
-        <Route path="/skill/:skillId" element={<MaintanancePage />} />
-        <Route path="/not-found" element={<NotFound />} />
+        <Route path="/">
+          <Route index element={<MainPage windowWidth={windowWidth} />} />
+          <Route path="thank-you" element={<ThankYouPage />} />
+          <Route path="project" element={<MaintanancePage />}>
+            <Route index />
+            <Route path=":projectId" />
+          </Route>
+          <Route path="skill" element={<MaintanancePage />}>
+            <Route index />
+            <Route path=":skillId" />
+          </Route>
 
-        {/* Page not found */}
-        <Route path="/*" element={<Navigate to="/not-found" />} />
+          <Route path="not-found" element={<NotFound />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
       </Routes>
     </div>
   );
