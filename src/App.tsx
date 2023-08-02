@@ -9,32 +9,20 @@ import { BrowserView } from "react-device-detect";
 import { on } from "events";
 
 type GlobalState = {
-  projects: { inLine: number; displayed: number };
-  manageProjects: Function;
+  windowWidth: number;
 };
 
 function App() {
-  let [projects, setProjects] = useState({ inLine: 3, displayed: 3 });
+  let [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     const onResize = () => {
-      const width = window.innerWidth;
-      const { inLine, displayed } = projects;
-      if (width < 1024) {
-        if (inLine !== 1) setProjects({ inLine: 1, displayed });
-      } else if (width < 1280) {
-        if (inLine !== 2) setProjects({ inLine: 2, displayed });
-      } else if (width < 1536) {
-        if (inLine !== 3) setProjects({ inLine: 3, displayed });
-      }
+      setWindowWidth(window.innerWidth);
+      console.log(windowWidth);
     };
     window.addEventListener("resize", onResize);
-    onResize();
-  }, [projects]);
-  const manageProjects = (change: number) => {
-    const { inLine, displayed } = projects;
-    setProjects({ inLine, displayed: displayed + change * inLine });
-  };
+  }, [windowWidth]);
+
   return (
     <div className="App text-black">
       <BrowserView>
@@ -42,21 +30,13 @@ function App() {
       </BrowserView>
       <Routes>
         <Route path="/">
-          <Route
-            index
-            element={
-              <MainPage projects={projects} manageProjects={manageProjects} />
-            }
-          />
+          <Route index element={<MainPage windowWidth={windowWidth} />} />
           <Route path="thank-you" element={<ThankYouPage />} />
-          <Route
-            path="project"
-            element={<MaintanancePage backTo="/#projects" />}
-          >
+          <Route path="project" element={<MaintanancePage />}>
             <Route index />
             <Route path=":projectId" />
           </Route>
-          <Route path="skill" element={<MaintanancePage backTo="/#skills" />}>
+          <Route path="skill" element={<MaintanancePage />}>
             <Route index />
             <Route path=":skillId" />
           </Route>
