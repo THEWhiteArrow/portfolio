@@ -5,10 +5,10 @@ import Hero from "./Hero";
 import Projects from "./Projects";
 import Skills from "./Skills";
 import Vision from "./Vision";
-import { GlobalState } from "../App";
 
 import Aos from "aos";
 import { Helmet } from "react-helmet";
+import { GlobalState } from "../App";
 
 type MyProps = GlobalState & {
   setNavigateBack: React.Dispatch<React.SetStateAction<boolean>>;
@@ -35,7 +35,6 @@ class MainPage extends Component<MyProps> {
         </Helmet>
         <Hero />
         <Projects
-          windowWidth={this.props.windowWidth}
           projectsDisplayed={this.props.projectsDisplayed}
           setProjectsDisplayed={this.props.setProjectsDisplayed}
         />

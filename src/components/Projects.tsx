@@ -4,61 +4,19 @@ import ProjectTile from "./ProjectTile";
 import Title from "./Title";
 import CustomLink from "./CustomLink";
 import "../styles/Projects.css";
-
 import { GlobalState } from "../App";
 
-type MyState = {
-  projectsInLine: number;
-};
-
-export default class Projects extends Component<GlobalState, MyState> {
-  constructor(props: GlobalState) {
-    super(props);
-    this.state = {
-      projectsInLine: 3,
-    };
-  }
-
-  handleClickMore = (e: any) => {
-    e.preventDefault();
-    e.stopPropagation();
-    // this.setState({
-    //   projectsDisplayed:
-    //     this.state.projectsDisplayed + this.state.projectsInLine,
-    // });
-    this.props.setProjectsDisplayed(
-      this.props.projectsDisplayed + this.state.projectsInLine
-    );
+export default class Projects extends Component<GlobalState, any> {
+  handleClickMore = () => {
+    this.props.setProjectsDisplayed(this.props.projectsDisplayed + 6);
   };
-  handleClickLess = (e: any) => {
-    e.preventDefault();
-    e.stopPropagation();
-    this.props.setProjectsDisplayed(
-      this.props.projectsDisplayed - this.state.projectsInLine
-    );
-    // this.setState({
-    //   projectsDisplayed:
-    //     this.state.projectsDisplayed - this.state.projectsInLine,
-    // });
+  handleClickLess = () => {
+    this.props.setProjectsDisplayed(this.props.projectsDisplayed - 6);
   };
 
   render() {
-    let width = this.props.windowWidth;
-    const { projectsInLine } = this.state;
-
-    if (width < 1024 && projectsInLine !== 1) {
-      this.setState({ projectsInLine: 1 });
-      this.props.setProjectsDisplayed(1);
-    } else if (width < 1280 && projectsInLine !== 2) {
-      this.setState({ projectsInLine: 2 });
-      this.props.setProjectsDisplayed(2);
-    } else if (projectsInLine !== 3) {
-      // 1536
-      this.setState({ projectsInLine: 3 });
-      this.props.setProjectsDisplayed(3);
-    }
-
     const { projectsDisplayed } = this.props;
+
     let readMore = null;
 
     if (projectsDisplayed < data.length || true) {
@@ -66,18 +24,19 @@ export default class Projects extends Component<GlobalState, MyState> {
         <div className="relative">
           <div className="Projects-projects mb-10 flex flex-row flex-wrap justify-evenly">
             {data
-              .slice(projectsDisplayed, projectsDisplayed + projectsInLine)
+              .slice(projectsDisplayed, projectsDisplayed + 2)
               .map((project, i) => (
                 <ProjectTile key={i} {...project} shorten={true} />
               ))}
           </div>
 
           <div className="absolute w-full h-full top-0 left-0 fadeLikeMedium flex justify-center text-xl">
-            {projectsDisplayed !== projectsInLine && (
+            {projectsDisplayed !== 3 && (
               <CustomLink
                 to=""
                 className="mt-auto mb-3 mx-2 animate-none w-fit p-4 stroke-white self-center"
                 onClick={this.handleClickLess}
+                type="button"
               >
                 See less
               </CustomLink>
@@ -87,6 +46,7 @@ export default class Projects extends Component<GlobalState, MyState> {
                 to=""
                 className="mt-auto mb-3 mx-2 animate-none w-fit p-4 stroke-white self-center"
                 onClick={this.handleClickMore}
+                type="button"
               >
                 See MORE!
               </CustomLink>
